@@ -5,7 +5,8 @@
 @layer base {
   :root {
     /* Brand Typography Variables */
-    --font-heading: var(--font-mono);
+    --font-sans: 'Inter', system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --font-heading: var(--font-sans);
     --line-height-body: 1.625;
     --tracking-heading-tight: -0.03em;
 
@@ -81,7 +82,7 @@
 
   /* Outlaw Typography Base Styles */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-mono font-bold tracking-tighter;
+    @apply font-heading font-bold tracking-tighter;
   }
 
   h1 { @apply text-4xl md:text-5xl lg:text-6xl; }

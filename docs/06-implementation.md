@@ -1,4 +1,4 @@
-# Implementation Guide
+# Implementation Guide: Creator Portfolio
 
 ## Project Setup
 
@@ -535,3 +535,22 @@ When updating any part of this system:
 5. **Run accessibility checks** to maintain WCAG compliance
 
 This documentation should be treated as a living document that evolves with the codebase.
+
+## Brand-Aligned Implementation Principles
+- Every technical decision should support creativity, authenticity, and personal growth.
+- The structure is modular and scalable, allowing for new creative projects and experiments.
+- Accessibility and clarity are prioritized throughout.
+- Regular updates to the Playground and About pages demonstrate ongoing growth and learning.
+
+## Psychological Pillars in Practice
+- **Creative Flow:** Encourage experimentation and highlight the process behind each project.
+- **Emotional Resonance:** Use documentation and code to invite curiosity and connection.
+- **Inclusive Access:** Ensure all users can explore, learn, and interact with your work.
+
+## About & Playground Pages
+- **About:** Tell your story, philosophy, and approach to creative problem-solving in code.
+- **Playground:** Showcase interactive code experiments and invite visitors to explore and try things out.
+
+## Brand Voice in Implementation
+- Documentation and code should be reflective, insightful, and encouraging.
+- Focus on substance, clarity, and creative expression.

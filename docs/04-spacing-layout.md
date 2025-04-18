@@ -1,4 +1,20 @@
-# Spacing & Layout System
+# Spacing & Layout System: Creator Portfolio
+
+## Psychological Principles & Brand Alignment
+Our spacing and layout system is designed for cognitive clarity, creative flow, and inclusive access. Every measurement and proportion is chosen to support information processing, emotional comfort, and creative exploration—core to the Creator archetype.
+
+### Base Unit System
+- Harmonious, modular scale for creative flexibility and clarity.
+
+### Layout Containers & Grids
+- Responsive, accessible containers and grids for clear navigation and creative presentation.
+- Support for About and Playground pages as spaces for storytelling and experimentation.
+
+### White Space Strategy
+- Use negative space to invite exploration and focus attention on creative work.
+
+### Accessibility
+- All spacing and layout choices support universal design and ease of use for all visitors.
 
 ## Psychological Principles
 

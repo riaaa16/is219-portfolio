@@ -1,4 +1,15 @@
-# Color Psychology System
+# Color Psychology System: Creator Portfolio
+
+## Brand & Psychological Foundation
+Our color system is built to support creativity, emotional resonance, and inclusive access. Each color is chosen for its psychological effect and its ability to express originality, clarity, and approachability—core to the Creator archetype.
+
+### Primary Palette
+- **Tropical Indigo:** Creativity & Imagination
+- **Charcoal:** Stability & Depth
+- **Asparagus:** Growth & Balance
+- **Vanilla:** Optimism & Clarity
+- **Light Coral:** Energy & Approachability
+- **White:** Simplicity & Space
 
 ## Scientific Foundation
 
@@ -6,115 +17,110 @@ Our color system is built on extensive cross-cultural research in color psycholo
 
 ### Primary Color Palette
 
-#### Core Blue (Trust & Competence)
+#### Tropical Indigo (Creativity & Imagination)
 ```typescript
 // Tailwind config
 colors: {
-  primary: {
-    50: '#f0f9ff',
-    100: '#e0f2fe',
-    200: '#bae6fd',
-    300: '#7dd3fc',
-    400: '#38bdf8',
-    500: '#0ea5e9',  // Primary brand color
-    600: '#0284c7',
-    700: '#0369a1',
-    800: '#075985',
-    900: '#0c4a6e',
-    950: '#082f49',
+  tropical_indigo: {
+    DEFAULT: '#9894DB',
+    100: '#141237',
+    200: '#28256e',
+    300: '#3d37a5',
+    400: '#625dc9',
+    500: '#9894db',
+    600: '#aca9e2',
+    700: '#c1bfea',
+    800: '#d6d4f1',
+    900: '#eaeaf8',
   }
 }
 ```
 
-**Psychological Properties:**
-- Promotes trust and reliability
-- Enhances cognitive processing
-- Creates sense of depth and stability
-- Cross-cultural positive associations
-
-### Secondary Colors
-
-#### Supportive Green (Growth & Stability)
+#### Charcoal (Stability & Depth)
 ```typescript
-secondary: {
-  50: '#f0fdf4',
-  100: '#dcfce7',
-  200: '#bbf7d0',
-  300: '#86efac',
-  400: '#4ade80',
-  500: '#22c55e',
-  600: '#16a34a',
-  700: '#15803d',
-  800: '#166534',
-  900: '#14532d',
-  950: '#052e16',
+charcoal: {
+  DEFAULT: '#434957',
+  100: '#0d0f11',
+  200: '#1b1d23',
+  300: '#282c34',
+  400: '#353a45',
+  500: '#434957',
+  600: '#626a7f',
+  700: '#868ea2',
+  800: '#aeb4c1',
+  900: '#d7d9e0',
 }
 ```
 
-#### Accent Purple (Innovation & Quality)
+#### Asparagus (Growth & Balance)
 ```typescript
-accent: {
-  50: '#faf5ff',
-  100: '#f3e8ff',
-  200: '#e9d5ff',
-  300: '#d8b4fe',
-  400: '#c084fc',
-  500: '#a855f7',
-  600: '#9333ea',
-  700: '#7e22ce',
-  800: '#6b21a8',
-  900: '#581c87',
-  950: '#3b0764',
+asparagus: {
+  DEFAULT: '#71A74F',
+  100: '#162110',
+  200: '#2d431f',
+  300: '#43642f',
+  400: '#5a853f',
+  500: '#71a74f',
+  600: '#8cbb6f',
+  700: '#a9cc93',
+  800: '#c6ddb7',
+  900: '#e2eedb',
 }
 ```
 
-### Neutral System
-Carefully calibrated for optimal cognitive processing and reduced eye strain:
-
+#### Vanilla (Optimism & Clarity)
 ```typescript
-neutral: {
-  50: '#f9fafb',
-  100: '#f3f4f6',
-  200: '#e5e7eb',
-  300: '#d1d5db',
-  400: '#9ca3af',
-  500: '#6b7280',
-  600: '#4b5563',
-  700: '#374151',
-  800: '#1f2937',
-  900: '#111827',
-  950: '#030712',
+vanilla: {
+  DEFAULT: '#FAE5A2',
+  100: '#4e3d04',
+  200: '#9d7a08',
+  300: '#ebb70c',
+  400: '#f6d054',
+  500: '#fae5a2',
+  600: '#fbebb5',
+  700: '#fcf0c8',
+  800: '#fdf5da',
+  900: '#fefaed',
 }
 ```
 
-### Semantic Colors
-
-#### Success States
+#### Light Coral (Energy & Approachability)
 ```typescript
-success: {
-  light: '#dcfce7',  // Subtle feedback
-  default: '#22c55e', // Primary feedback
-  dark: '#15803d',   // Strong feedback
+light_coral: {
+  DEFAULT: '#F6878F',
+  100: '#47050a',
+  200: '#8e0b13',
+  300: '#d5101d',
+  400: '#f1414d',
+  500: '#f6878f',
+  600: '#f8a0a6',
+  700: '#fab8bc',
+  800: '#fbd0d2',
+  900: '#fde7e9',
 }
 ```
 
-#### Error States
+#### White (Simplicity & Space)
 ```typescript
-error: {
-  light: '#fee2e2',
-  default: '#ef4444',
-  dark: '#b91c1c',
+white: {
+  DEFAULT: '#FFFFFF',
+  100: '#FFFFFF',
+  200: '#FFFFFF',
+  300: '#FFFFFF',
+  400: '#FFFFFF',
+  500: '#FFFFFF',
+  600: '#F5F5F5',
+  700: '#E5E5E5',
+  800: '#D4D4D4',
+  900: '#A3A3A3',
 }
 ```
 
-#### Warning States
-```typescript
-warning: {
-  light: '#fef3c7',
-  default: '#f59e0b',
-  dark: '#b45309',
-}
-```
+### Palette Overview
+- CSV: 9894DB,434957,71A74F,FAE5A2,F6878F,FFFFFF
+- With #: #9894DB, #434957, #71A74F, #FAE5A2, #F6878F, #FFFFFF
+- Array: ["9894DB","434957","71A74F","FAE5A2","F6878F","FFFFFF"]
+- Object: {"Tropical indigo":"9894DB","Charcoal":"434957","Asparagus":"71A74F","Vanilla":"FAE5A2","Light coral":"F6878F","White":"FFFFFF"}
 
 ### Implementation Guidelines
 
@@ -139,11 +145,10 @@ module.exports = {
 /* globals.css */
 @layer utilities {
   .bg-gradient-brand {
-    @apply bg-gradient-to-r from-primary-600 to-primary-500;
+    @apply bg-gradient-to-r from-tropical_indigo-600 to-tropical_indigo-500;
   }
-  
   .text-gradient-brand {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-tropical_indigo-600 to-tropical_indigo-500;
   }
 }
 ```
@@ -152,9 +157,9 @@ module.exports = {
 
 #### Content Hierarchy
 1. **Primary Actions**
-   - Use primary-500 for main CTA buttons
+   - Use tropical_indigo-500 for main CTA buttons
    - Ensure 4.5:1 contrast ratio minimum
-   - Apply hover states using primary-600
+   - Apply hover states using tropical_indigo-600
 
 2. **Information Hierarchy**
    - Use neutral colors for body text
@@ -171,9 +176,11 @@ module.exports = {
 #### Color Meaning Matrix
 | Color    | Western | Eastern | Islamic | Action                     |
 |----------|---------|---------|---------|----------------------------|
-| Primary  | Trust   | Harmony | Peace   | Use for key brand elements |
-| Secondary| Growth  | Life    | Nature  | Use for supporting elements|
-| Accent   | Quality | Royalty | Wisdom  | Use for highlights        |
+| Tropical Indigo | Creativity | Imagination | Harmony | Use for key brand elements |
+| Charcoal | Stability | Depth | Strength | Use for supporting elements|
+| Asparagus | Growth | Balance | Nature | Use for highlights        |
+| Vanilla | Optimism | Clarity | Purity | Use for highlights        |
+| Light Coral | Energy | Approachability | Warmth | Use for highlights        |
 
 ### Accessibility Standards
 
@@ -204,3 +211,16 @@ module.exports = {
 1. "Color Psychology in Digital Interfaces" - HCI Journal 2024
 2. "Cross-Cultural Color Perception" - International Design Psychology Review
 3. "Color and Cognitive Processing" - Digital Psychology Quarterly
+
+### Application Principles
+- Use color to highlight creative work, guide exploration, and support emotional connection.
+- Maintain high contrast and accessibility for all users.
+- Use color sparingly for emphasis, supporting clarity and creative focus.
+
+### Accessibility & Inclusion
+- All color choices tested for contrast and color blindness.
+- Color is never the only means of conveying information.
+
+### Brand Voice in Color
+- Expressive, inviting, and original.
+- Color choices support a welcoming, creative, and authentic experience.

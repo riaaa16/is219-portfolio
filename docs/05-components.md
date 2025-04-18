@@ -1,8 +1,7 @@
-# Component Psychology System
+# Component Psychology System: Creator Portfolio
 
-## Psychological Foundation
-
-Our component system is built on principles of cognitive psychology, interaction design research, and behavioral science. Each component is designed to optimize both conscious and unconscious user interactions.
+## Psychological & Brand Foundation
+Our component system is designed for creative expression, technical clarity, and inclusive access. Components support both conscious and unconscious user interactions, reflecting the Creator archetype and the brand's values of creativity, authenticity, and excellence.
 
 ## shadcn/ui Integration
 
@@ -314,3 +313,14 @@ The project includes a responsive navigation component (`MainNav`) that uses the
 2. "Cognitive Load in UI Components" - Interface Psychology Review
 3. "Interaction Patterns and Mental Models" - Digital Psychology Quarterly
 4. "Motion Psychology in User Interfaces" - UX Research Journal
+
+### Implementation Principles
+- Components should invite exploration, learning, and connection.
+- Use interaction states and feedback to support creative flow and emotional resonance.
+- Maintain modularity and scalability for ongoing growth and new creative work.
+
+### Accessibility
+- All components are tested for accessibility and inclusive design.
+
+### Brand Voice in Components
+- Components communicate with clarity, encouragement, and technical precision.
