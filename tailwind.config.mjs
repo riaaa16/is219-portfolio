@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class",
+  darkMode: ["class"],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,112 +8,30 @@ export default {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: [
-          'Inter',
-          'system-ui',
-          'Segoe UI',
-          'Roboto',
-          'Helvetica Neue',
-          'Arial',
-          'sans-serif'
-        ],
-        mono: [
-          'IBM Plex Mono',
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          'Liberation Mono',
-          'Courier New',
-          'monospace'
-        ],
-        heading: [
-          'Inter',
-          'system-ui',
-          'Segoe UI',
-          'Roboto',
-          'Helvetica Neue',
-          'Arial',
-          'sans-serif'
-        ],
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
+    },
+    extend: {
       colors: {
-        // Core Brand Colors
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
-        },
-        secondary: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
-          950: '#052e16',
-        },
-        accent: {
-          50: '#faf5ff',
-          100: '#f3e8ff',
-          200: '#e9d5ff',
-          300: '#d8b4fe',
-          400: '#c084fc',
-          500: '#a855f7',
-          600: '#9333ea',
-          700: '#7e22ce',
-          800: '#6b21a8',
-          900: '#581c87',
-          950: '#3b0764',
-        },
-        neutral: {
-          50: '#f9fafb',
-          100: '#f3f4f6',
-          200: '#e5e7eb',
-          300: '#d1d5db',
-          400: '#9ca3af',
-          500: '#6b7280',
-          600: '#4b5563',
-          700: '#374151',
-          800: '#1f2937',
-          900: '#111827',
-          950: '#030712',
-        },
-        // Semantic Colors
-        success: {
-          light: '#dcfce7',
-          DEFAULT: '#22c55e',
-          dark: '#15803d',
-        },
-        error: {
-          light: '#fee2e2',
-          DEFAULT: '#ef4444',
-          dark: '#b91c1c',
-        },
-        warning: {
-          light: '#fef3c7',
-          DEFAULT: '#f59e0b',
-          dark: '#b45309',
-        },
-        // System Colors
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Core framework system colors
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -121,6 +39,10 @@ export default {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -130,77 +52,76 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        tropical_indigo: {
-          DEFAULT: '#9894DB',
-          100: '#141237',
-          200: '#28256e',
-          300: '#3d37a5',
-          400: '#625dc9',
-          500: '#9894db',
-          600: '#aca9e2',
-          700: '#c1bfea',
-          800: '#d6d4f1',
-          900: '#eaeaf8',
+        
+        // Creator brand colors from docs/03-color-system.md
+        // Tropical Indigo (Creativity & Imagination)
+        'tropical-indigo': {
+          DEFAULT: "hsl(var(--tropical-indigo))",
+          100: "hsl(var(--tropical-indigo-100))",
+          200: "hsl(var(--tropical-indigo-200))",
+          300: "hsl(var(--tropical-indigo-300))",
+          400: "hsl(var(--tropical-indigo-400))",
+          500: "hsl(var(--tropical-indigo-500))",
+          600: "hsl(var(--tropical-indigo-600))",
+          700: "hsl(var(--tropical-indigo-700))",
+          800: "hsl(var(--tropical-indigo-800))",
+          900: "hsl(var(--tropical-indigo-900))",
         },
-        charcoal: {
-          DEFAULT: '#434957',
-          100: '#0d0f11',
-          200: '#1b1d23',
-          300: '#282c34',
-          400: '#353a45',
-          500: '#434957',
-          600: '#626a7f',
-          700: '#868ea2',
-          800: '#aeb4c1',
-          900: '#d7d9e0',
+        
+        // Charcoal (Stability & Depth)
+        'charcoal': {
+          DEFAULT: "hsl(var(--charcoal))",
+          100: "hsl(var(--charcoal-100))",
+          200: "hsl(var(--charcoal-200))",
+          300: "hsl(var(--charcoal-300))",
+          400: "hsl(var(--charcoal-400))",
+          500: "hsl(var(--charcoal-500))",
+          600: "hsl(var(--charcoal-600))",
+          700: "hsl(var(--charcoal-700))",
+          800: "hsl(var(--charcoal-800))",
+          900: "hsl(var(--charcoal-900))",
         },
-        asparagus: {
-          DEFAULT: '#71A74F',
-          100: '#162110',
-          200: '#2d431f',
-          300: '#43642f',
-          400: '#5a853f',
-          500: '#71a74f',
-          600: '#8cbb6f',
-          700: '#a9cc93',
-          800: '#c6ddb7',
-          900: '#e2eedb',
+        
+        // Asparagus (Growth & Balance)
+        'asparagus': {
+          DEFAULT: "hsl(var(--asparagus))",
+          100: "hsl(var(--asparagus-100))",
+          200: "hsl(var(--asparagus-200))",
+          300: "hsl(var(--asparagus-300))",
+          400: "hsl(var(--asparagus-400))",
+          500: "hsl(var(--asparagus-500))",
+          600: "hsl(var(--asparagus-600))",
+          700: "hsl(var(--asparagus-700))",
+          800: "hsl(var(--asparagus-800))",
+          900: "hsl(var(--asparagus-900))",
         },
-        vanilla: {
-          DEFAULT: '#FAE5A2',
-          100: '#4e3d04',
-          200: '#9d7a08',
-          300: '#ebb70c',
-          400: '#f6d054',
-          500: '#fae5a2',
-          600: '#fbebb5',
-          700: '#fcf0c8',
-          800: '#fdf5da',
-          900: '#fefaed',
+        
+        // Vanilla (Optimism & Clarity)
+        'vanilla': {
+          DEFAULT: "hsl(var(--vanilla))",
+          100: "hsl(var(--vanilla-100))",
+          200: "hsl(var(--vanilla-200))",
+          300: "hsl(var(--vanilla-300))",
+          400: "hsl(var(--vanilla-400))",
+          500: "hsl(var(--vanilla-500))",
+          600: "hsl(var(--vanilla-600))",
+          700: "hsl(var(--vanilla-700))",
+          800: "hsl(var(--vanilla-800))",
+          900: "hsl(var(--vanilla-900))",
         },
-        light_coral: {
-          DEFAULT: '#F6878F',
-          100: '#47050a',
-          200: '#8e0b13',
-          300: '#d5101d',
-          400: '#f1414d',
-          500: '#f6878f',
-          600: '#f8a0a6',
-          700: '#fab8bc',
-          800: '#fbd0d2',
-          900: '#fde7e9',
-        },
-        white: {
-          DEFAULT: '#FFFFFF',
-          100: '#FFFFFF',
-          200: '#FFFFFF',
-          300: '#FFFFFF',
-          400: '#FFFFFF',
-          500: '#FFFFFF',
-          600: '#F5F5F5',
-          700: '#E5E5E5',
-          800: '#D4D4D4',
-          900: '#A3A3A3',
+        
+        // Light Coral (Energy & Approachability)
+        'light-coral': {
+          DEFAULT: "hsl(var(--light-coral))",
+          100: "hsl(var(--light-coral-100))",
+          200: "hsl(var(--light-coral-200))",
+          300: "hsl(var(--light-coral-300))",
+          400: "hsl(var(--light-coral-400))",
+          500: "hsl(var(--light-coral-500))",
+          600: "hsl(var(--light-coral-600))",
+          700: "hsl(var(--light-coral-700))",
+          800: "hsl(var(--light-coral-800))",
+          900: "hsl(var(--light-coral-900))",
         },
       },
       borderRadius: {
@@ -208,14 +129,26 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      container: {
-        center: true,
-        padding: "2rem",
-        screens: {
-          "2xl": "1400px",
+      fontFamily: {
+        sans: ["var(--font-sans)"],
+        mono: ["var(--font-mono)"],
+        heading: ["var(--font-heading)"],
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 }
