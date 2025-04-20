@@ -6,6 +6,76 @@ Our spacing and layout system is designed for cognitive clarity, creative flow, 
 ### Base Unit System
 - Harmonious, modular scale for creative flexibility and clarity.
 
+### Layout Structure
+Based on the design shown in about.png, our layout follows a clean, focused structure:
+
+1. **Header Section**
+   - Logo on the left (using Silkscreen pixel font)
+   - Minimal navigation with only two key links: "about" and "projects"
+   - Comfortable padding to separate from main content
+
+2. **Main Content Section**
+   - Clear content area with proper spacing for readability
+   - Generous whitespace to focus attention on content
+
+3. **Card Grid Section**
+   - Three colorful cards (yellow, pink, blue) arranged horizontally on desktop
+   - Cards stack vertically on mobile for better readability
+   - Equal spacing between cards for visual balance
+
+4. **Footer Section**
+   - Simple footer with copyright information
+   - Proper padding to separate from content
+
+### White Space Strategy
+- Use negative space to invite exploration and focus attention on creative work.
+- Comfortable padding around all content sections (2rem/32px minimum)
+- Increased spacing between major content blocks (3rem/48px recommended)
+
+### Responsive Behavior
+- Layout adapts gracefully across device sizes
+- Cards transition from horizontal to vertical layout on smaller screens
+- Navigation simplifies to maintain focus and usability
+
+### Implementation Example
+```tsx
+// Example layout structure
+<div className="min-h-screen flex flex-col">
+  {/* Header - Logo left, nav right with pixel font and proper spacing */}
+  <header className="container mx-auto px-6 py-8 flex justify-between items-center">
+    <div className="font-pixel text-lg">Viktoria Gaiser</div>
+    <nav className="flex gap-8">
+      <Link href="/about" className="text-sm hover:opacity-70">about</Link>
+      <Link href="/projects" className="text-sm hover:opacity-70">projects</Link>
+    </nav>
+  </header>
+
+  {/* Main content - Clean, focused layout with proper spacing */}
+  <main className="container mx-auto px-6 py-12 flex-grow">
+    {/* Content section */}
+    <section className="max-w-3xl mb-16">
+      <h1 className="font-pixel text-3xl mb-8">Content Header</h1>
+      <div className="prose">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </div>
+    </section>
+
+    {/* Card grid - Three colorful cards with equal spacing */}
+    <section className="mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Yellow, Pink, and Blue cards */}
+        {/* Card components from component documentation */}
+      </div>
+    </section>
+  </main>
+
+  {/* Simple footer with proper spacing */}
+  <footer className="container mx-auto px-6 py-8 text-sm text-gray-500">
+    © Viktoria Gaiser, {new Date().getFullYear()}. All rights reserved.
+  </footer>
+</div>
+```
+
 ### Layout Containers & Grids
 - Responsive, accessible containers and grids for clear navigation and creative presentation.
 - Support for About and Playground pages as spaces for storytelling and experimentation.

@@ -7,16 +7,17 @@ Our typography system is designed for cognitive efficiency and creative expressi
 - Exceptional clarity and neutral baseline for honest, accessible communication.
 - Low cognitive load and high recognition speed for all users.
 
-### Secondary / Display Typeface (Headlines & Accent): IBM Plex Mono (or similar)
-- Monospace evokes code, technical truth, and creative problem-solving.
-- Disruptive contrast and technical authority, visually representing the Creator's originality.
+### Secondary / Display Typeface (Headings & Logo): Silkscreen
+- Pixel font that evokes creativity, gaming aesthetic, and digital artistry.
+- Creates distinctive visual identity for brand elements and headings.
+- Provides strong contrast with body text for clear visual hierarchy.
 
 ### Type Scale
 - Functional scale with bold contrast between levels to highlight creative hierarchy.
 - Encourage expressive, impactful headlines and clear, readable body text.
 
 ### Psychological Hierarchy
-- Headlines: Use display font, bold, tight tracking, and large sizes for creative impact.
+- Headings: Use Silkscreen font for creative impact and brand consistency.
 - Body: Inter, regular/medium, relaxed line height for clarity and trust.
 - Supporting text: Muted color, smaller size for context without distraction.
 
@@ -28,10 +29,71 @@ Our typography system is designed for cognitive efficiency and creative expressi
 - Use CSS variables for font families and tracking.
 - Apply heading font via utility or base styles.
 - Ensure accessibility and contrast for all users.
+- Import Silkscreen font for pixel-art aesthetic elements.
+
+### Font Loading Implementation
+```typescript
+// In app/layout.tsx
+import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
+
+// Load Inter for body text
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+})
+
+// Load Silkscreen for pixel art headings and brand elements
+const silkscreen = localFont({
+  src: [
+    {
+      path: '../public/fonts/silkscreen/slkscr.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/silkscreen/slkscrb.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-pixel',
+})
+
+// Apply in HTML
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={`${inter.variable} ${silkscreen.variable} font-sans`}>
+        {children}
+      </body>
+    </html>
+  )
+}
+```
+
+### Tailwind Configuration
+```typescript
+// tailwind.config.mjs
+const { fontFamily } = require("tailwindcss/defaultTheme")
+
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+        pixel: ['var(--font-pixel)', 'monospace'],
+      },
+    },
+  },
+}
+```
 
 ### Brand Voice in Typography
 - Expressive, clear, and authentic.
 - Balance technical precision with creative flair.
+- Pixel art typography for brand identity elements reinforces creativity and uniqueness.
 
 ### Accessibility
 - Ensure all typography meets or exceeds WCAG 2.1 AAA contrast and scalability standards.

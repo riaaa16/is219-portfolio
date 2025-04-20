@@ -4,11 +4,10 @@
 Our color system is built to support creativity, emotional resonance, and inclusive access. Each color is chosen for its psychological effect and its ability to express originality, clarity, and approachability—core to the Creator archetype.
 
 ### Primary Palette
-- **Tropical Indigo:** Creativity & Imagination
+- **Pastel Blue:** Creativity & Tech Inspiration
+- **Pastel Yellow:** Optimism & Clarity
+- **Pastel Pink:** Energy & Approachability
 - **Charcoal:** Stability & Depth
-- **Asparagus:** Growth & Balance
-- **Vanilla:** Optimism & Clarity
-- **Light Coral:** Energy & Approachability
 - **White:** Simplicity & Space
 
 ## Scientific Foundation
@@ -17,22 +16,54 @@ Our color system is built on extensive cross-cultural research in color psycholo
 
 ### Primary Color Palette
 
-#### Tropical Indigo (Creativity & Imagination)
+#### Pastel Blue (Creativity & Tech Inspiration)
 ```typescript
 // Tailwind config
 colors: {
-  tropical_indigo: {
-    DEFAULT: '#9894DB',
-    100: '#141237',
-    200: '#28256e',
-    300: '#3d37a5',
-    400: '#625dc9',
-    500: '#9894db',
-    600: '#aca9e2',
-    700: '#c1bfea',
-    800: '#d6d4f1',
-    900: '#eaeaf8',
+  pastel_blue: {
+    DEFAULT: '#A8D8FF',
+    100: '#0a2d47',
+    200: '#145a8e',
+    300: '#1e88d5',
+    400: '#5eb0eb',
+    500: '#A8D8FF',
+    600: '#b6e0ff',
+    700: '#c4e8ff',
+    800: '#d1f0ff',
+    900: '#e8f7ff',
   }
+}
+```
+
+#### Pastel Yellow (Optimism & Clarity)
+```typescript
+pastel_yellow: {
+  DEFAULT: '#FFE9A8',
+  100: '#473a0a',
+  200: '#8e7414',
+  300: '#d5ae1e',
+  400: '#ebc95e',
+  500: '#FFE9A8',
+  600: '#ffeeb6',
+  700: '#fff2c4',
+  800: '#fff7d1',
+  900: '#fffbe8',
+}
+```
+
+#### Pastel Pink (Energy & Approachability)
+```typescript
+pastel_pink: {
+  DEFAULT: '#FFC2E2',
+  100: '#470a2d',
+  200: '#8e145a',
+  300: '#d51e88',
+  400: '#eb5eb0',
+  500: '#FFC2E2',
+  600: '#ffcee8',
+  700: '#ffdaee',
+  800: '#ffe6f4',
+  900: '#fff2fa',
 }
 ```
 
@@ -49,54 +80,6 @@ charcoal: {
   700: '#868ea2',
   800: '#aeb4c1',
   900: '#d7d9e0',
-}
-```
-
-#### Asparagus (Growth & Balance)
-```typescript
-asparagus: {
-  DEFAULT: '#71A74F',
-  100: '#162110',
-  200: '#2d431f',
-  300: '#43642f',
-  400: '#5a853f',
-  500: '#71a74f',
-  600: '#8cbb6f',
-  700: '#a9cc93',
-  800: '#c6ddb7',
-  900: '#e2eedb',
-}
-```
-
-#### Vanilla (Optimism & Clarity)
-```typescript
-vanilla: {
-  DEFAULT: '#FAE5A2',
-  100: '#4e3d04',
-  200: '#9d7a08',
-  300: '#ebb70c',
-  400: '#f6d054',
-  500: '#fae5a2',
-  600: '#fbebb5',
-  700: '#fcf0c8',
-  800: '#fdf5da',
-  900: '#fefaed',
-}
-```
-
-#### Light Coral (Energy & Approachability)
-```typescript
-light_coral: {
-  DEFAULT: '#F6878F',
-  100: '#47050a',
-  200: '#8e0b13',
-  300: '#d5101d',
-  400: '#f1414d',
-  500: '#f6878f',
-  600: '#f8a0a6',
-  700: '#fab8bc',
-  800: '#fbd0d2',
-  900: '#fde7e9',
 }
 ```
 
@@ -117,10 +100,10 @@ white: {
 ```
 
 ### Palette Overview
-- CSV: 9894DB,434957,71A74F,FAE5A2,F6878F,FFFFFF
-- With #: #9894DB, #434957, #71A74F, #FAE5A2, #F6878F, #FFFFFF
-- Array: ["9894DB","434957","71A74F","FAE5A2","F6878F","FFFFFF"]
-- Object: {"Tropical indigo":"9894DB","Charcoal":"434957","Asparagus":"71A74F","Vanilla":"FAE5A2","Light coral":"F6878F","White":"FFFFFF"}
+- CSV: A8D8FF,FFE9A8,FFC2E2,434957,FFFFFF
+- With #: #A8D8FF, #FFE9A8, #FFC2E2, #434957, #FFFFFF
+- Array: ["A8D8FF","FFE9A8","FFC2E2","434957","FFFFFF"]
+- Object: {"Pastel Blue":"A8D8FF","Pastel Yellow":"FFE9A8","Pastel Pink":"FFC2E2","Charcoal":"434957","White":"FFFFFF"}
 
 ### Implementation Guidelines
 
@@ -145,10 +128,10 @@ module.exports = {
 /* globals.css */
 @layer utilities {
   .bg-gradient-brand {
-    @apply bg-gradient-to-r from-tropical_indigo-600 to-tropical_indigo-500;
+    @apply bg-gradient-to-r from-pastel_blue-600 to-pastel_blue-500;
   }
   .text-gradient-brand {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-tropical_indigo-600 to-tropical_indigo-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pastel_blue-600 to-pastel_blue-500;
   }
 }
 ```
@@ -157,9 +140,9 @@ module.exports = {
 
 #### Content Hierarchy
 1. **Primary Actions**
-   - Use tropical_indigo-500 for main CTA buttons
+   - Use pastel_blue-500 for main CTA buttons
    - Ensure 4.5:1 contrast ratio minimum
-   - Apply hover states using tropical_indigo-600
+   - Apply hover states using pastel_blue-600
 
 2. **Information Hierarchy**
    - Use neutral colors for body text
@@ -176,11 +159,11 @@ module.exports = {
 #### Color Meaning Matrix
 | Color    | Western | Eastern | Islamic | Action                     |
 |----------|---------|---------|---------|----------------------------|
-| Tropical Indigo | Creativity | Imagination | Harmony | Use for key brand elements |
+| Pastel Blue | Creativity | Tech Inspiration | Harmony | Use for key brand elements |
+| Pastel Yellow | Optimism | Clarity | Purity | Use for highlights        |
+| Pastel Pink | Energy | Approachability | Warmth | Use for highlights        |
 | Charcoal | Stability | Depth | Strength | Use for supporting elements|
-| Asparagus | Growth | Balance | Nature | Use for highlights        |
-| Vanilla | Optimism | Clarity | Purity | Use for highlights        |
-| Light Coral | Energy | Approachability | Warmth | Use for highlights        |
+| White | Simplicity | Space | Purity | Use for highlights        |
 
 ### Accessibility Standards
 

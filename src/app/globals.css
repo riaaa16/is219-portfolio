@@ -4,176 +4,62 @@
 
 @layer base {
   :root {
-    /* Brand Typography Variables */
-    --font-sans: 'Inter', system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --font-sans: 'Inter', system-ui, Arial, sans-serif;
     --font-mono: 'IBM Plex Mono', monospace;
-    --font-heading: var(--font-sans);
-    --line-height-body: 1.625;
-    --tracking-heading-tight: -0.03em;
-
-    /* Base Brand Colors in HSL */
+    --font-pixel: 'Silkscreen', monospace;
     --background: 0 0% 100%;
-    --foreground: 220 20% 30%; /* Based on Charcoal */
-
+    --foreground: 222.2 47.4% 11.2%;
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 30%; /* Based on Charcoal */
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 30%; /* Based on Charcoal */
-
-    /* Primary: Tropical Indigo */
-    --primary: 244 54% 72%; /* Based on Tropical Indigo (#9894DB) */
-    --primary-foreground: 0 0% 100%;
-
-    /* Secondary: Asparagus */
-    --secondary: 100 38% 48%; /* Based on Asparagus (#71A74F) */
-    --secondary-foreground: 0 0% 100%;
-
-    /* Accent: Light Coral */
-    --accent: 355 87% 75%; /* Based on Light Coral (#F6878F) */
-    --accent-foreground: 220 40% 15%;
-
-    /* Muted colors based on Charcoal */
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 20% 50%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 20% 90%;
-    --input: 220 20% 90%;
-    --ring: 244 54% 72%; /* Match Primary */
-
+    --card-foreground: 222.2 47.4% 11.2%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 215 20.2% 65.1%;
     --radius: 0.5rem;
-
-    /* Creator Brand Colors - From docs/03-color-system.md */
-    /* Tropical Indigo (Creativity & Imagination) */
-    --tropical-indigo: 243 54% 72%;
-    --tropical-indigo-100: 243 54% 15%;
-    --tropical-indigo-200: 243 54% 29%;
-    --tropical-indigo-300: 243 54% 43%;
-    --tropical-indigo-400: 243 54% 58%;
-    --tropical-indigo-500: 243 54% 72%;
-    --tropical-indigo-600: 243 54% 78%;
-    --tropical-indigo-700: 243 54% 84%;
-    --tropical-indigo-800: 243 54% 89%;
-    --tropical-indigo-900: 243 54% 95%;
-
-    /* Charcoal (Stability & Depth) */
-    --charcoal: 220 12% 30%;
-    --charcoal-100: 220 12% 6%;
-    --charcoal-200: 220 12% 13%;
-    --charcoal-300: 220 12% 19%;
-    --charcoal-400: 220 12% 24%;
-    --charcoal-500: 220 12% 30%;
-    --charcoal-600: 220 12% 44%;
-    --charcoal-700: 220 12% 58%;
-    --charcoal-800: 220 12% 72%;
-    --charcoal-900: 220 12% 86%;
-
-    /* Asparagus (Growth & Balance) */
-    --asparagus: 100 38% 48%;
-    --asparagus-100: 100 38% 8%;
-    --asparagus-200: 100 38% 16%;
-    --asparagus-300: 100 38% 24%;
-    --asparagus-400: 100 38% 32%;
-    --asparagus-500: 100 38% 48%;
-    --asparagus-600: 100 38% 58%;
-    --asparagus-700: 100 38% 68%;
-    --asparagus-800: 100 38% 79%;
-    --asparagus-900: 100 38% 89%;
-
-    /* Vanilla (Optimism & Clarity) */
-    --vanilla: 45 91% 81%;
-    --vanilla-100: 45 91% 16%;
-    --vanilla-200: 45 91% 32%;
-    --vanilla-300: 45 91% 48%;
-    --vanilla-400: 45 91% 65%;
-    --vanilla-500: 45 91% 81%;
-    --vanilla-600: 45 91% 85%;
-    --vanilla-700: 45 91% 88%;
-    --vanilla-800: 45 91% 92%;
-    --vanilla-900: 45 91% 96%;
-
-    /* Light Coral (Energy & Approachability) */
-    --light-coral: 355 87% 75%;
-    --light-coral-100: 355 87% 15%;
-    --light-coral-200: 355 87% 30%;
-    --light-coral-300: 355 87% 45%;
-    --light-coral-400: 355 87% 60%;
-    --light-coral-500: 355 87% 75%;
-    --light-coral-600: 355 87% 80%;
-    --light-coral-700: 355 87% 85%;
-    --light-coral-800: 355 87% 90%;
-    --light-coral-900: 355 87% 95%;
-
-    /* Contrast levels for accessibility */
-    --high-contrast: 220 50% 15%;
-    --medium-contrast: 220 20% 35%;
-    --low-contrast: 220 15% 55%;
+    /* Pastel color palette */
+    --pastel-blue-500: 210 100% 83%;
+    --pastel-yellow-500: 45 100% 83%;
+    --pastel-pink-500: 338 100% 83%;
+    --charcoal-500: 220 12% 50%;
   }
 
   .dark {
-    --background: 220 15% 10%;
-    --foreground: 210 40% 98%;
-
-    --card: 220 15% 12%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 220 15% 12%;
-    --popover-foreground: 210 40% 98%;
-
-    /* Primary in dark mode: Stronger Tropical Indigo */
-    --primary: 244 54% 72%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Secondary in dark mode: Stronger Asparagus */
-    --secondary: 100 38% 48%;
-    --secondary-foreground: 0 0% 100%;
-
-    /* Accent in dark mode: Stronger Light Coral */
-    --accent: 355 87% 75%;
-    --accent-foreground: 0 0% 100%;
-
-    --muted: 217 15% 20%;
-    --muted-foreground: 215 20% 70%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 15% 25%;
-    --input: 220 15% 25%;
-    --ring: 244 54% 72%; /* Match Primary */
-  }
-
-  * {
-    @apply border-border;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 216 34% 17%;
   }
 
   body {
     @apply bg-background text-foreground;
   }
 
-  /* Creator Typography Base Styles */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold tracking-tighter;
+    @apply font-medium tracking-tight;
   }
 
-  h1 { @apply text-4xl md:text-5xl lg:text-6xl mb-4; }
-  h2 { @apply text-3xl md:text-4xl lg:text-5xl mb-3; }
-  h3 { @apply text-2xl md:text-3xl mb-3; }
-  h4 { @apply text-xl md:text-2xl mb-2; }
-
-  p {
-    @apply text-base leading-relaxed my-2;
-  }
-
-  .supporting-text {
-    @apply text-sm text-muted-foreground;
-  }
-  
-  .font-heading {
-    @apply font-sans font-bold tracking-tighter;
+  .font-pixel {
+    font-family: 'Silkscreen', monospace;
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -188,32 +74,36 @@
 }
 
 @layer utilities {
-  /* Brand Gradient Utilities - Based on docs/03-color-system.md */
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
   .bg-gradient-brand {
-    @apply bg-gradient-to-r from-tropical-indigo-600 to-tropical-indigo-500;
+    @apply bg-gradient-to-r from-[hsl(var(--pastel-blue-500))] to-[hsl(var(--pastel-blue-500))];
   }
   
   .text-gradient-brand {
-    @apply bg-gradient-to-r from-tropical-indigo-600 to-tropical-indigo-500 bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--pastel-blue-500))] to-[hsl(var(--pastel-blue-500))];
   }
 
   .bg-gradient-accent {
-    @apply bg-gradient-to-r from-asparagus-500 to-asparagus-400;
+    @apply bg-gradient-to-r from-[hsl(var(--pastel-yellow-500))] to-[hsl(var(--pastel-yellow-500))];
   }
   
   .text-gradient-accent {
-    @apply bg-gradient-to-r from-asparagus-500 to-asparagus-400 bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--pastel-yellow-500))] to-[hsl(var(--pastel-yellow-500))];
   }
   
   .bg-gradient-innovation {
-    @apply bg-gradient-to-r from-light-coral-500 to-vanilla-400;
+    @apply bg-gradient-to-r from-[hsl(var(--pastel-pink-500))] to-[hsl(var(--pastel-yellow-500))];
   }
   
   .text-gradient-innovation {
-    @apply bg-gradient-to-r from-light-coral-500 to-vanilla-400 bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--pastel-pink-500))] to-[hsl(var(--pastel-yellow-500))];
   }
 
-  /* Contrast text utilities for accessibility */
   .text-high-contrast {
     @apply text-charcoal-200 dark:text-white;
   }
@@ -223,6 +113,6 @@
   }
 
   .text-low-contrast {
-    @apply text-charcoal-600 dark:text-charcoal-400;
+    @apply text-charcoal-500 dark:text-charcoal-400;
   }
 }

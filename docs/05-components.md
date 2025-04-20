@@ -15,19 +15,51 @@ This project uses [shadcn/ui](https://ui.shadcn.com/) as its component library f
 - **Customizable**: Each component can be modified to match your exact design requirements
 - **Versioned Components**: Add and update components individually as needed
 
-### Adding New shadcn/ui Components
+### Color Card Component (Featured)
 
-You can add new shadcn/ui components using the CLI:
+The website features a prominent colorful card layout with three distinct cards, each in a different color (pastel yellow, pastel pink, and pastel blue). These cards create visual interest and highlight key content areas.
 
-```bash
-npx shadcn@latest add [component-name]
+```tsx
+// Example implementation of colorful card component
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {/* Yellow Card */}
+  <Card className="bg-pastel_yellow border-none shadow-md">
+    <CardHeader>
+      <CardTitle className="font-pixel">CARD NAME</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </CardContent>
+  </Card>
+
+  {/* Pink Card */}
+  <Card className="bg-pastel_pink-200 border-none shadow-md">
+    <CardHeader>
+      <CardTitle className="font-pixel">CARD NAME</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </CardContent>
+  </Card>
+
+  {/* Blue Card */}
+  <Card className="bg-pastel_blue-200 border-none shadow-md">
+    <CardHeader>
+      <CardTitle className="font-pixel">CARD NAME</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </CardContent>
+  </Card>
+</div>
 ```
 
-For example, to add the dropdown menu component:
-
-```bash
-npx shadcn@latest add dropdown-menu
-```
+**Psychological Properties:**
+- Soft pastel colors create a friendly, approachable aesthetic
+- Color palette evokes creativity, optimism, and digital craftsmanship
+- Card layout groups related content for easier cognitive processing
+- Consistent structure provides a predictable pattern that reduces cognitive load
+- Pixel font headings maintain brand identity while creating hierarchy
 
 ### Base Components (shadcn/ui)
 

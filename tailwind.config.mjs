@@ -22,8 +22,6 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        
-        // Core framework system colors
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -53,24 +51,49 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         
-        // Creator brand colors from docs/03-color-system.md
-        // Tropical Indigo (Creativity & Imagination)
-        'tropical-indigo': {
-          DEFAULT: "hsl(var(--tropical-indigo))",
-          100: "hsl(var(--tropical-indigo-100))",
-          200: "hsl(var(--tropical-indigo-200))",
-          300: "hsl(var(--tropical-indigo-300))",
-          400: "hsl(var(--tropical-indigo-400))",
-          500: "hsl(var(--tropical-indigo-500))",
-          600: "hsl(var(--tropical-indigo-600))",
-          700: "hsl(var(--tropical-indigo-700))",
-          800: "hsl(var(--tropical-indigo-800))",
-          900: "hsl(var(--tropical-indigo-900))",
+        // New Pastel Color Palette from about.png
+        "pastel-blue": {
+          DEFAULT: "hsl(var(--pastel-blue))",
+          50: "hsl(var(--pastel-blue-50))",
+          100: "hsl(var(--pastel-blue-100))",
+          200: "hsl(var(--pastel-blue-200))",
+          300: "hsl(var(--pastel-blue-300))",
+          400: "hsl(var(--pastel-blue-400))",
+          500: "hsl(var(--pastel-blue-500))",
+          600: "hsl(var(--pastel-blue-600))",
+          700: "hsl(var(--pastel-blue-700))",
+          800: "hsl(var(--pastel-blue-800))",
+          900: "hsl(var(--pastel-blue-900))",
         },
-        
-        // Charcoal (Stability & Depth)
-        'charcoal': {
+        "pastel-yellow": {
+          DEFAULT: "hsl(var(--pastel-yellow))",
+          50: "hsl(var(--pastel-yellow-50))",
+          100: "hsl(var(--pastel-yellow-100))",
+          200: "hsl(var(--pastel-yellow-200))",
+          300: "hsl(var(--pastel-yellow-300))",
+          400: "hsl(var(--pastel-yellow-400))",
+          500: "hsl(var(--pastel-yellow-500))",
+          600: "hsl(var(--pastel-yellow-600))",
+          700: "hsl(var(--pastel-yellow-700))",
+          800: "hsl(var(--pastel-yellow-800))",
+          900: "hsl(var(--pastel-yellow-900))",
+        },
+        "pastel-pink": {
+          DEFAULT: "hsl(var(--pastel-pink))",
+          50: "hsl(var(--pastel-pink-50))",
+          100: "hsl(var(--pastel-pink-100))",
+          200: "hsl(var(--pastel-pink-200))",
+          300: "hsl(var(--pastel-pink-300))",
+          400: "hsl(var(--pastel-pink-400))",
+          500: "hsl(var(--pastel-pink-500))",
+          600: "hsl(var(--pastel-pink-600))",
+          700: "hsl(var(--pastel-pink-700))",
+          800: "hsl(var(--pastel-pink-800))",
+          900: "hsl(var(--pastel-pink-900))",
+        },
+        "charcoal": {
           DEFAULT: "hsl(var(--charcoal))",
+          50: "hsl(var(--charcoal-50))",
           100: "hsl(var(--charcoal-100))",
           200: "hsl(var(--charcoal-200))",
           300: "hsl(var(--charcoal-300))",
@@ -80,48 +103,6 @@ export default {
           700: "hsl(var(--charcoal-700))",
           800: "hsl(var(--charcoal-800))",
           900: "hsl(var(--charcoal-900))",
-        },
-        
-        // Asparagus (Growth & Balance)
-        'asparagus': {
-          DEFAULT: "hsl(var(--asparagus))",
-          100: "hsl(var(--asparagus-100))",
-          200: "hsl(var(--asparagus-200))",
-          300: "hsl(var(--asparagus-300))",
-          400: "hsl(var(--asparagus-400))",
-          500: "hsl(var(--asparagus-500))",
-          600: "hsl(var(--asparagus-600))",
-          700: "hsl(var(--asparagus-700))",
-          800: "hsl(var(--asparagus-800))",
-          900: "hsl(var(--asparagus-900))",
-        },
-        
-        // Vanilla (Optimism & Clarity)
-        'vanilla': {
-          DEFAULT: "hsl(var(--vanilla))",
-          100: "hsl(var(--vanilla-100))",
-          200: "hsl(var(--vanilla-200))",
-          300: "hsl(var(--vanilla-300))",
-          400: "hsl(var(--vanilla-400))",
-          500: "hsl(var(--vanilla-500))",
-          600: "hsl(var(--vanilla-600))",
-          700: "hsl(var(--vanilla-700))",
-          800: "hsl(var(--vanilla-800))",
-          900: "hsl(var(--vanilla-900))",
-        },
-        
-        // Light Coral (Energy & Approachability)
-        'light-coral': {
-          DEFAULT: "hsl(var(--light-coral))",
-          100: "hsl(var(--light-coral-100))",
-          200: "hsl(var(--light-coral-200))",
-          300: "hsl(var(--light-coral-300))",
-          400: "hsl(var(--light-coral-400))",
-          500: "hsl(var(--light-coral-500))",
-          600: "hsl(var(--light-coral-600))",
-          700: "hsl(var(--light-coral-700))",
-          800: "hsl(var(--light-coral-800))",
-          900: "hsl(var(--light-coral-900))",
         },
       },
       borderRadius: {
@@ -133,6 +114,7 @@ export default {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
         heading: ["var(--font-heading)"],
+        pixel: ["var(--font-pixel)"],
       },
       keyframes: {
         "accordion-down": {
