@@ -1,9 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <main className="container mx-auto px-6 py-12 flex-grow">
         {/* About section with larger gap and smaller lightbulb */}
         <section className="mb-16 flex flex-col md:flex-row md:gap-16">
@@ -57,9 +58,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="container mx-auto px-6 py-8 text-sm text-gray-500 text-center">
-        Viktoria Gaiser © {new Date().getFullYear()} &middot; <a href="mailto:vg435@njit.edu" className="underline hover:text-primary">vg435@njit.edu</a>
-      </footer>
+      <Footer />
     </div>
   );
 }
