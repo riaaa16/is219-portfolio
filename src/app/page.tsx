@@ -28,32 +28,32 @@ export default function Home() {
         <section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Yellow Card */}
-            <Card variant="pastel-yellow" className="bg-pastel-yellow-500 border-none shadow-md">
-              <CardHeader>
-                <CardTitle className="font-pixel">CARD NAME</CardTitle>
-              </CardHeader>
-              <CardContent>
+            <div className="pixel-card pixel-card-yellow card-hover">
+              <div className="pixel-card-header pixel-card-header-yellow">
+                <span className="font-pixel text-2xl">CARD NAME</span>
+              </div>
+              <div className="pixel-card-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
             {/* Pink Card */}
-            <Card variant="pastel-pink" className="bg-pastel-pink-500 border-none shadow-md">
-              <CardHeader>
-                <CardTitle className="font-pixel">CARD NAME</CardTitle>
-              </CardHeader>
-              <CardContent>
+            <div className="pixel-card pixel-card-pink card-hover">
+              <div className="pixel-card-header pixel-card-header-pink">
+                <span className="font-pixel text-2xl">CARD NAME</span>
+              </div>
+              <div className="pixel-card-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
             {/* Blue Card */}
-            <Card variant="pastel-blue" className="bg-pastel-blue-500 border-none shadow-md">
-              <CardHeader>
-                <CardTitle className="font-pixel">CARD NAME</CardTitle>
-              </CardHeader>
-              <CardContent>
+            <div className="pixel-card pixel-card-blue card-hover">
+              <div className="pixel-card-header pixel-card-header-blue">
+                <span className="font-pixel text-2xl">CARD NAME</span>
+              </div>
+              <div className="pixel-card-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </section>
       </main>
