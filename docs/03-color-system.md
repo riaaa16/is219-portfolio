@@ -21,6 +21,7 @@ Our color system is built on extensive cross-cultural research in color psycholo
 // Tailwind config
 colors: {
   pastel_blue: {
+    DARKER: '#08325c', // Custom darker shade
     DEFAULT: '#A8D8FF',
     100: '#0a2d47',
     200: '#145a8e',

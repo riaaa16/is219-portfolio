@@ -21,7 +21,7 @@ export function MainNav() {
           className="w-8 h-8"
           style={{ display: 'block' }}
         />
-        <Link href="/" className="font-pixel text-2xl">
+        <Link href="/" className="font-pixel text-2xl text-dark-blue">
           Viktoria Gaiser
         </Link>
       </div>
@@ -31,8 +31,11 @@ export function MainNav() {
           <Link
             key={route.href}
             href={route.href}
-            className="text-lg transition-opacity hover:opacity-70"
+            className="nav-link text-lg transition-opacity hover:opacity-70 group flex items-center relative"
           >
+            <span className="w-6 h-6 mr-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center">
+              <img src="/peta/animated arrow.png" alt="arrow" width={24} height={24} />
+            </span>
             {route.label}
           </Link>
         ))}
@@ -58,7 +61,7 @@ export function MainNav() {
             <Link
               key={route.href}
               href={route.href}
-              className="text-lg"
+              className="nav-link text-lg"
               onClick={() => setMenuOpen(false)}
             >
               {route.label}

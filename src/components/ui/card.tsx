@@ -10,10 +10,10 @@ const Card = React.forwardRef<
 >(({ className, variant = "default", ...props }, ref) => {
   const variantClasses = {
     default: "bg-card",
-    "pastel-blue": "bg-pastel-blue-500 border-none",
-    "pastel-yellow": "bg-pastel-yellow-500 border-none",
-    "pastel-pink": "bg-pastel-pink-500 border-none",
-    "charcoal": "bg-charcoal-500 text-white border-none",
+    "pastel-blue": "bg-pastel-blue-500 text-dark-blue",
+    "pastel-yellow": "bg-pastel-yellow-500 text-charcoal-500",
+    "pastel-pink": "bg-pastel-pink-500 text-charcoal-500",
+    "charcoal": "bg-charcoal-500 text-white",
   };
 
   return (

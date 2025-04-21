@@ -8,7 +8,7 @@ export default function Home() {
         {/* About section with larger gap and smaller lightbulb */}
         <section className="mb-16 flex flex-col md:flex-row md:gap-16">
           <div className="flex-1 min-w-0 flex flex-col justify-center">
-            <h1 className="font-pixel text-3xl mb-8">About Me</h1>
+            <h1 className="font-pixel silkscreen-regular text-3xl mb-8">About Me</h1>
             <div className="prose">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus, nunc libero accumsan lacus, vitae tincidunt nisl mauris a elit.</p>
               <p>Nulla facilisi. Proin luctus, velit id commodo varius, urna velit tincidunt nunc, id faucibus mauris risus vel nisl.</p>

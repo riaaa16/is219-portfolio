@@ -52,6 +52,7 @@ export default {
         },
         
         // New Pastel Color Palette from about.png
+        "dark-blue": "#0736b8",
         "pastel-blue": {
           DEFAULT: "hsl(var(--pastel-blue))",
           50: "hsl(var(--pastel-blue-50))",
@@ -104,6 +105,12 @@ export default {
           800: "hsl(var(--charcoal-800))",
           900: "hsl(var(--charcoal-900))",
         },
+        'pastel-yellow-500': '#FFE9A8',
+        'pastel-pink-500': '#FFC2E2',
+        'pastel-blue-500': '#A8D8FF',
+        'charcoal-500': '#434957',
+        'dark-blue': '#0a2e91',
+        // Add more shades as needed
       },
       borderRadius: {
         lg: "var(--radius)",

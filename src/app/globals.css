@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -58,7 +59,7 @@
 
   .font-pixel {
     font-family: 'Silkscreen', monospace;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: -0.01em;
   }
 }
@@ -69,7 +70,7 @@
   }
   
   .nav-link {
-    @apply text-sm font-medium transition-colors hover:text-primary;
+    @apply text-sm font-medium transition-colors transition-transform duration-300 ease-in-out hover:text-[#2d75f7] hover:scale-105;
   }
 }
 
@@ -114,5 +115,37 @@
 
   .text-low-contrast {
     @apply text-charcoal-500 dark:text-charcoal-400;
+  }
+
+  .silkscreen-regular {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .silkscreen-bold {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .text-dark-blue {
+    color: #0a2e91;
+  }
+  .hover\:text-dark-blue:hover {
+    color: #0a2e91;
+  }
+
+  .text-charcoal-200 {
+    color: #aeb4c1;
+  }
+  .text-charcoal-400 {
+    color: #353a45;
+  }
+  .text-charcoal-500 {
+    color: #434957;
+  }
+
+  .hover\:text-brand-blue:hover {
+    color: #2d75f7;
   }
 }
