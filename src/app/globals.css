@@ -129,10 +129,10 @@
   }
 
   .text-dark-blue {
-    color: #0a2e91;
+    color: #0966bd;
   }
   .hover\:text-dark-blue:hover {
-    color: #0a2e91;
+    color: #0966bd;
   }
 
   .text-charcoal-200 {
@@ -147,5 +147,15 @@
 
   .hover\:text-brand-blue:hover {
     color: #2d75f7;
+  }
+
+  .card-title-blue {
+    color: #0966bd;
+  }
+  .card-title-yellow {
+    color: #7c5a00;
+  }
+  .card-title-pink {
+    color: #a13c7a;
   }
 }

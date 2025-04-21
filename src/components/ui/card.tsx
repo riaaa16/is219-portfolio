@@ -1,6 +1,10 @@
+"use client"
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+
+// Context to provide card variant to children
+const CardVariantContext = React.createContext<string>("default");
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -17,20 +21,32 @@ const Card = React.forwardRef<
   };
 
   return (
-    <div
-      ref={ref}
-      className={cn(
-        "rounded-lg border transition-all duration-200",
-        // No shadow by default
-        "hover:shadow-lg hover:-translate-y-1",
-        variantClasses[variant],
-        className
-      )}
-      {...props}
-    />
+    <CardVariantContext.Provider value={variant}>
+      <div
+        ref={ref}
+        className={cn(
+          "rounded-lg border transition-all duration-200",
+          // No shadow by default
+          "hover:shadow-lg hover:-translate-y-1",
+          variantClasses[variant],
+          className
+        )}
+        data-variant={variant}
+        {...props}
+      />
+    </CardVariantContext.Provider>
   );
 });
 Card.displayName = "Card"
+
+// Map card variant to title color (using new utility classes)
+const cardTitleColor: Record<string, string> = {
+  "pastel-blue": "card-title-blue",
+  "pastel-yellow": "card-title-yellow",
+  "pastel-pink": "card-title-pink",
+  "charcoal": "text-white",
+  "default": "text-foreground",
+};
 
 const CardHeader = React.forwardRef<
   HTMLDivElement,
@@ -44,19 +60,25 @@ const CardHeader = React.forwardRef<
 ))
 CardHeader.displayName = "CardHeader"
 
+// CardTitle now uses context to get the variant and applies the correct color
 const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
+  HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
+>(({ className, ...props }, ref) => {
+  const variant = React.useContext(CardVariantContext);
+  const colorClass = variant && cardTitleColor[variant] ? cardTitleColor[variant] : cardTitleColor.default;
+  return (
+    <h3
+      ref={ref}
+      className={cn(
+        "text-2xl font-semibold leading-none tracking-tight",
+        colorClass,
+        className
+      )}
+      {...props}
+    />
+  );
+});
 CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<

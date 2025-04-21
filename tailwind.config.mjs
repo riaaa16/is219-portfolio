@@ -52,7 +52,7 @@ export default {
         },
         
         // New Pastel Color Palette from about.png
-        "dark-blue": "#0736b8",
+        "dark-blue": "#1248de",
         "pastel-blue": {
           DEFAULT: "hsl(var(--pastel-blue))",
           50: "hsl(var(--pastel-blue-50))",

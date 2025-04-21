@@ -28,7 +28,7 @@ export default function Home() {
         <section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Yellow Card */}
-            <Card className="bg-pastel-yellow-500 border-none shadow-md">
+            <Card variant="pastel-yellow" className="bg-pastel-yellow-500 border-none shadow-md">
               <CardHeader>
                 <CardTitle className="font-pixel">CARD NAME</CardTitle>
               </CardHeader>
@@ -37,7 +37,7 @@ export default function Home() {
               </CardContent>
             </Card>
             {/* Pink Card */}
-            <Card className="bg-pastel-pink-500 border-none shadow-md">
+            <Card variant="pastel-pink" className="bg-pastel-pink-500 border-none shadow-md">
               <CardHeader>
                 <CardTitle className="font-pixel">CARD NAME</CardTitle>
               </CardHeader>
@@ -46,7 +46,7 @@ export default function Home() {
               </CardContent>
             </Card>
             {/* Blue Card */}
-            <Card className="bg-pastel-blue-500 border-none shadow-md">
+            <Card variant="pastel-blue" className="bg-pastel-blue-500 border-none shadow-md">
               <CardHeader>
                 <CardTitle className="font-pixel">CARD NAME</CardTitle>
               </CardHeader>
