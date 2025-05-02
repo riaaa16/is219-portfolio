@@ -7,6 +7,7 @@ export function MainNav() {
   const routes = [
     { href: "/", label: "about" },
     { href: "/projects", label: "projects" },
+    { href: "/contact", label: "contact" },
   ];
   const [menuOpen, setMenuOpen] = useState(false);
 
