@@ -159,6 +159,26 @@
     color: #a13c7a;
   }
 
+  .hover\:text-card-title-blue:hover {
+    color: #0966bd;
+  }
+  .hover\:text-card-title-yellow:hover {
+    color: #7c5a00;
+  }
+  .hover\:text-card-title-pink:hover {
+    color: #a13c7a;
+  }
+
+  .card-title-blue-hover:hover {
+    color: #0966bd;
+  }
+  .card-title-yellow-hover:hover {
+    color: #7c5a00;
+  }
+  .card-title-pink-hover:hover {
+    color: #a13c7a;
+  }
+
   .pixel-card {
     background: #fff;
     border-width: 4px;
