@@ -95,7 +95,7 @@ export default function AiChat() {
                 display: "flex",
                 alignItems: "center"
               }}>
-                {user === username && (
+                {(user === username || user === "Flan") && (
                   <span style={{
                     display: "inline-block",
                     position: "absolute",
