@@ -2,13 +2,21 @@
 import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import DataVisualization from "@/components/eggs-main/DataVisualization";
+import AiChat from "@/components/ai-chat/AiChat";
 import GithubButton from "@/components/ui/GithubButton";
 
 export default function ProjectsPage() {
   const [selected, setSelected] = useState("");
 
+  const githubLinks: Record<string, string | null> = {
+    "data-visualization": "https://github.com/riaaa16/eggs/tree/main",
+    "ai-chat": "https://github.com/riaaa16/js-rag-demo/tree/chat", // or your actual repo link
+    // Add more as needed
+  };
+
   const projectComponents: Record<string, React.ReactNode> = {
     "data-visualization": <DataVisualization />,
+    "ai-chat": <AiChat/>,
     // Add more projects here as needed
   };
 
@@ -34,10 +42,11 @@ export default function ProjectsPage() {
               >
                 <option value="">select a project</option>
                 <option value="data-visualization">data visualization</option>
+                <option value="ai-chat">ai chat</option>
               </select>
-              {selected === "data-visualization" && (
+              {githubLinks[selected] && (
                 <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
-                  <GithubButton link="https://github.com/riaaa16/eggs/tree/main" style={{ borderWidth: 2 }} />
+                  <GithubButton link={githubLinks[selected]!} style={{ borderWidth: 2 }} />
                 </div>
               )}
             </div>

@@ -1,0 +1,120 @@
+/* AiChat React component styles (CSS module) */
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+
+.view {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    flex: 1;
+    overflow: hidden;
+}
+
+.online {
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 200px;
+    max-height: 100%;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+.userList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.userList li {
+    position: relative;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.userList li::before {
+    content: '';
+    position: absolute;
+    left: -1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.5em;
+    height: 0.5em;
+    background: #4caf50;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.chat {
+    background: #fff;
+    border: 1px solid #ccc;
+    flex: 1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 0;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+.messages li {
+    margin-bottom: 0.5rem;
+    padding: 0.5em 0.8em;
+    background: #e3f2fd;
+    border-radius: 6px;
+    word-break: break-word;
+    max-width: 80%;
+}
+
+.typing {
+    color: #888;
+    font-style: italic;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.form {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.input {
+    flex: 1;
+    padding: 0.7em;
+    border-radius: 6px;
+    border: 1px solid #1976d2;
+    font-size: 1rem;
+}
+
+.form button {
+    padding: 0.7em 1.2em;
+    border-radius: 6px;
+    border: none;
+    background: #1976d2;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form button:hover,
+ .form button:focus {
+    background: #1565c0;
+}
