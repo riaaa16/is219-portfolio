@@ -1,5 +1,8 @@
+'use client'
+
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./style.module.css";
+import { pipeline } from "@xenova/transformers";
 
 // Message and user types
 interface ChatMessage {
@@ -14,13 +17,7 @@ export default function AiChat() {
   const [username, setUsername] = useState("");
   const [prompted, setPrompted] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
-
-  // Scroll to bottom on new message
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [messages]);
+  const flanPipelineRef = useRef<any>(null);
 
   // Prompt for username once on mount
   useEffect(() => {
@@ -34,33 +31,48 @@ export default function AiChat() {
     }
   }, [prompted, username]);
 
-  // User list: always show current user and Bot
-  const userList = username ? [username, "Bot"] : ["Bot"];
+  // User list: always show current user and Flan
+  const userList = username ? [username, "Flan"] : ["Flan"];
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInput(e.target.value);
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function getFlanResponse(input: string): Promise<string> {
+    if (!flanPipelineRef.current) {
+      flanPipelineRef.current = await pipeline("text2text-generation", "Xenova/flan-t5-small");
+    }
+    const result = await flanPipelineRef.current(input, { max_new_tokens: 128 });
+    if (Array.isArray(result) && result[0]?.generated_text) {
+      return result[0].generated_text;
+    }
+    return "Sorry, I couldn't generate a response.";
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (input.trim() && username) {
       const userMsg: ChatMessage = { username, message: input };
       setMessages((prev) => [...prev, userMsg]);
       setInput("");
-      // Simulate bot response
-      setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          { username: "Bot", message: getBotResponse(input), fromBot: true },
-        ]);
-      }, 600);
+      // Get Flan response locally
+      setMessages(prev => [
+        ...prev,
+        { username: "Flan", message: "...", fromBot: true }
+      ]);
+      const answer = await getFlanResponse(input);
+      setMessages(prev => {
+        // Replace the last '...' message with the real answer
+        const lastIndex = prev.length - 1;
+        if (lastIndex >= 0 && prev[lastIndex].fromBot && prev[lastIndex].message === "...") {
+          return [
+            ...prev.slice(0, lastIndex),
+            { username: "Flan", message: answer, fromBot: true }
+          ];
+        }
+        return [...prev, { username: "Flan", message: answer, fromBot: true }];
+      });
     }
-  }
-
-  function getBotResponse(userInput: string) {
-    if (/hello|hi/i.test(userInput)) return "Hello! How can I help you today?";
-    if (/help/i.test(userInput)) return "I'm here to help! Ask me anything.";
-    return "I'm a simple bot. Try saying 'hello' or 'help'.";
   }
 
   if (!username) return null;
