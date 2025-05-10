@@ -5,9 +5,25 @@ import DataVisualization from "@/components/eggs-main/DataVisualization";
 import AiChat from "@/components/ai-chat/AiChat";
 import Game2048 from "@/components/2048/Game2048";
 import GithubButton from "@/components/ui/GithubButton";
+import { useSearchParams } from "next/navigation";
 
 export default function ProjectsPage() {
-  const [selected, setSelected] = useState("");
+  const searchParams = useSearchParams();
+  const option = searchParams.get("option");
+  const [selected, setSelected] = useState(option || "");
+
+  // Keep dropdown and query param in sync
+  React.useEffect(() => {
+    if (option && option !== selected) setSelected(option);
+  }, [option]);
+
+  // Optionally update the URL when dropdown changes
+  const router = require("next/navigation").useRouter();
+  const handleSelect = (val: string) => {
+    setSelected(val);
+    if (val) router.replace(`/projects?option=${val}`);
+    else router.replace(`/projects`);
+  };
 
   const githubLinks: Record<string, string | null> = {
     "data-visualization": "https://github.com/riaaa16/eggs/tree/main",
@@ -40,7 +56,7 @@ export default function ProjectsPage() {
                 className="font-pixel"
                 id="project-select"
                 value={selected}
-                onChange={e => setSelected(e.target.value)}
+                onChange={e => handleSelect(e.target.value)}
                 style={{ fontSize: "1rem", padding: "0.5em 1em", borderRadius: 4, border: "2px solid #1976d2" }}
               >
                 <option value="">select a project</option>
@@ -62,7 +78,9 @@ export default function ProjectsPage() {
           )}
         </div>
         <div style={{ flex: 1 }}>
-          {projectComponent}
+          {selected === "data-visualization" && <DataVisualization />}
+          {selected === "ai-chat" && <AiChat />}
+          {selected === "2048" && <Game2048 />}
         </div>
         <Footer />
       </div>

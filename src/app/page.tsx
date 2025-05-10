@@ -1,8 +1,15 @@
+"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  function handleProjectCard(option: string) {
+    router.push(`/projects?option=${option}`);
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <main className="container mx-auto px-6 py-12 flex-grow">
@@ -29,30 +36,30 @@ export default function Home() {
         <section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Yellow Card */}
-            <div className="pixel-card pixel-card-yellow card-hover">
+            <div className="pixel-card pixel-card-yellow card-hover" onClick={() => handleProjectCard('data-visualization')} style={{ cursor: 'pointer' }}>
               <div className="pixel-card-header pixel-card-header-yellow">
-                <span className="font-pixel text-2xl">CARD NAME</span>
+                <span className="font-pixel text-2xl">Data Visualization</span>
               </div>
               <div className="pixel-card-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
+                <p>Look at D3 charts and mindmaps to explore the relation between food costs and minimum wage.</p>
               </div>
             </div>
             {/* Pink Card */}
-            <div className="pixel-card pixel-card-pink card-hover">
+            <div className="pixel-card pixel-card-pink card-hover" onClick={() => handleProjectCard('ai-chat')} style={{ cursor: 'pointer' }}>
               <div className="pixel-card-header pixel-card-header-pink">
-                <span className="font-pixel text-2xl">CARD NAME</span>
+                <span className="font-pixel text-2xl">AI Chat</span>
               </div>
               <div className="pixel-card-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
+                <p>Create a username and speak to Xenova's flan-t5-small text-to-text generation model!</p>
               </div>
             </div>
             {/* Blue Card */}
-            <div className="pixel-card pixel-card-blue card-hover">
+            <div className="pixel-card pixel-card-blue card-hover" onClick={() => handleProjectCard('2048')} style={{ cursor: 'pointer' }}>
               <div className="pixel-card-header pixel-card-header-blue">
-                <span className="font-pixel text-2xl">CARD NAME</span>
+                <span className="font-pixel text-2xl">2048</span>
               </div>
               <div className="pixel-card-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
+                <p>Play a recreation of the popular game 2048!</p>
               </div>
             </div>
           </div>
