@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import DataVisualization from "@/components/eggs-main/DataVisualization";
 import AiChat from "@/components/ai-chat/AiChat";
+import Game2048 from "@/components/2048/Game2048";
 import GithubButton from "@/components/ui/GithubButton";
 
 export default function ProjectsPage() {
@@ -10,13 +11,15 @@ export default function ProjectsPage() {
 
   const githubLinks: Record<string, string | null> = {
     "data-visualization": "https://github.com/riaaa16/eggs/tree/main",
-    "ai-chat": "https://github.com/riaaa16/js-rag-demo/tree/chat", // or your actual repo link
+    "ai-chat": "https://github.com/riaaa16/js-rag-demo/tree/chat",
+    "2048": "https://github.com/riaaa16/2048",
     // Add more as needed
   };
 
   const projectComponents: Record<string, React.ReactNode> = {
     "data-visualization": <DataVisualization />,
     "ai-chat": <AiChat/>,
+    "2048": <Game2048/>,
     // Add more projects here as needed
   };
 
@@ -43,6 +46,7 @@ export default function ProjectsPage() {
                 <option value="">select a project</option>
                 <option value="data-visualization">data visualization</option>
                 <option value="ai-chat">ai chat</option>
+                <option value="2048">2048</option>
               </select>
               {githubLinks[selected] && (
                 <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
