@@ -1,0 +1,108 @@
+/* Styling ported and matched exactly from refs/eggs-main/src/App.css and index.css for DataVisualization */
+.App {
+  text-align: center;
+}
+
+.section-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.section-box svg {
+  display: block;
+  margin: 1em auto;
+}
+
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1565c0; /* blue from d3.schemeCategory10 */
+  margin-bottom: 0.3em;
+  margin-top: 0;
+}
+
+.chart-subtitle {
+  font-size: 1.08rem;
+  color: #607d8b;
+  margin-bottom: 1.2em;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.active-chart-btn {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1.5px solid #1976d2;
+  background: #fff;
+  color: #1976d2;
+  padding: 0.4em 1.1em;
+  margin: 0.3em 0.2em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.inactive-chart-btn {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1.5px solid #1976d2;
+  background: #1976d2;
+  color: #fff;
+  padding: 0.4em 1.1em;
+  margin: 0.3em 0.2em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.section-box p, .section-box ul {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.section-box ul {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.section-box li {
+  margin-bottom: 0.3em;
+}
+
+.section-box h2 {
+  color: #1565c0; /* blue from d3.schemeCategory10 */
+  font-size: 1.5rem;
+}
+
+.section-box a {
+  color: #1976d2;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.section-box a:hover,
+.section-box a:focus {
+  color: #0d47a1;
+  text-decoration: underline;
+}
+
+.container {
+  background: #f7f7fa;
+}
+
+@media (max-width: 700px) {
+  .section-box {
+    padding: 1rem 0.5rem;
+  }
+}

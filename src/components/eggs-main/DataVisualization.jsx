@@ -5,6 +5,7 @@ import StackedBarChart from "./charts/stackedBar.jsx";
 import DivergingStackedBarChart from "./charts/divergingStackedBar.jsx";
 import TransitionButtons from "./transitionButtons.js";
 import Mindmap from "./charts/mindmap.jsx";
+import styles from "./DataVisualization.module.css";
 
 export default function DataVisualization() {
   const groceryPrices = [
@@ -27,14 +28,14 @@ export default function DataVisualization() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={`App min-h-screen flex flex-col text-center ${styles.App}`}>
       <main className="container mx-auto px-6 py-12 flex-grow">
-        <h1>Why is food so expensive nowadays?</h1>
-        <div className="section-box mb-8">
+        <h1 className="text-3xl mb-8 text-center font-bold">Why is food so expensive nowadays?</h1>
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <MultiLineChart
             csvFiles={groceryPrices}
-            title={"Average Prices of Grocery Items"}
-            subtitle={"For Northeast America"}
+            title={<span className={styles["chart-title"]}>Average Prices of Grocery Items</span>}
+            subtitle={<span className={styles["chart-subtitle"]}>For Northeast America</span>}
           />
           <p>How often have you gone to a store like Costco or Walmart and walked out feeling like
             you paid way too much for the amount you bought?</p>
@@ -50,22 +51,23 @@ export default function DataVisualization() {
             that groceries are becoming more expensive — but is this something we should
             actually be worrying about?</p>
         </div>
-        <div className="section-box mb-8">
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <LineChart
             filepath={'/data/NJ Hourly Minimum Wage.csv'}
-            title={"NJ Hourly Minimum Wage."}
+            title={<span className={styles["chart-title"]}>NJ Hourly Minimum Wage.</span>}
+            subtitle={""}
           />
           <p>If we take a close look at minimum wage — specifically in NJ — the amount
             we are able to earn as workers has been increasing over the years. However, an increase in both
             minimum wage and food products doesn't mean anything if the prices of foods are
             increasing at a quicker rate.</p>
         </div>
-        <div className="section-box mb-8">
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <TransitionButtons
             type = {"line"}
-            buttons = {productRatio}
+            buttons = {productRatio.map(b => ({...b, title: <span className={styles["chart-title"]}>What an Hour of Work Affords</span>}))}
             monthly = {false}
-            title = {"What an Hour of Work Affords"}
+            title = {<span className={styles["chart-title"]}>What an Hour of Work Affords</span>}
           />
           <p>By taking the ratio of minimum wage to the prices of groceries,
             I can calculate how many groceries we can buy with one hour of work.</p>
@@ -76,12 +78,12 @@ export default function DataVisualization() {
             over the years. The root of the problem may not be the prices of groceries. Where does the problem truly lie, then?
           </p>
         </div>
-        <div className="section-box mb-8">
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <TransitionButtons
             type = {"bar"}
-            buttons = {spendDistribution}
+            buttons = {spendDistribution.map(b => ({...b, title: <span className={styles["chart-title"]}>Spending Distribution</span>}))}
             monthly = {false}
-            title = {"Spending Distribution"}
+            title = {<span className={styles["chart-title"]}>Spending Distribution</span>}
           />
           <p>I decided to look at whether or not we've been buying more or less food. This information from
             the U.S. Bureau of Labor Statistics tracks how the average American consumer spends their money throughout the year.
@@ -92,10 +94,11 @@ export default function DataVisualization() {
             spent on <em>groceries</em>.
           </p>
         </div>
-        <div className="section-box mb-8">
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <StackedBarChart
             filepath={'/data/Allocation of money spent on food.csv'}
-            title={"Food Spending Distribution"}
+            title={<span className={styles["chart-title"]}>Food Spending Distribution</span>}
+            subtitle={""}
           /> 
           <p>We can divide how we spend our money on food into two categories. According to the U.S. Bureau of Labor Statistics, the two
             categories encompass the following:</p>
@@ -118,10 +121,11 @@ export default function DataVisualization() {
             we began returning to spending money on food away from home.
           </p>
         </div>
-        <div className="section-box mb-8">
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <StackedBarChart
             filepath={'/data/Online food delivery market revenue, 2017 - 2029.csv'}
-            title={"Online Food Delivery Market Revenue"}
+            title={<span className={styles["chart-title"]}>Online Food Delivery Market Revenue</span>}
+            subtitle={""}
             unit={" bn"}
           />
           <p>COVID-19 has changed many industries. The market revenue for food delivery services began to skyrocket
@@ -132,10 +136,11 @@ export default function DataVisualization() {
             continued to order-out and have our food delivered to us.
           </p>
         </div>
-        <div className="section-box mb-8">
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <DivergingStackedBarChart
             filepath={"/data/Restaurant unit economics.csv"}
-            title={"Restaurant unit economics"}
+            title={<span className={styles["chart-title"]}>Restaurant unit economics</span>}
+            subtitle={""}
           />
           <p>This chart from McKinsey & Company shows what a typical restaurant earns when
             you order through a food delivery service. Let's break it down.</p>
@@ -152,7 +157,7 @@ export default function DataVisualization() {
           <p>Unfortunately, occupancy actually exceeds the gross margins — leading to a negative contribution margin. After fulfilling a customer's 
           order, restaurants <em>lose</em> money.</p>
         </div>
-        <div className="section-box mb-8">
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <h2>Conclusion</h2>
           <Mindmap/>
           <p> It is reasonable to conclude that the increased costs for food can be attributed to a continued reliance
@@ -160,7 +165,7 @@ export default function DataVisualization() {
             can help reduce the amount you spend.
           </p>
         </div>
-        <div className="section-box mb-8">
+        <div className={styles["section-box"] + " section-box mb-8"}>
           <h2>Sources</h2>
           <ul>
             <li>U.S. Bureau of Labor Statistics</li>

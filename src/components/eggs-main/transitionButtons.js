@@ -4,21 +4,28 @@ import BarChart from "./charts/bar.jsx";
 
 const BUTTONS_HEIGHT = 50;
 
-const inactiveButton = { // Styling nor inactive buttons
-    border: "1.5px solid #9e0142",
-    borderRadius: "3px",
-    padding: "4px 8px",
-    margin: "10px 2px",
-    fontSize: 14,
-    color: "#9e0142",
+const baseButton = {
+    fontFamily: "inherit",
+    fontSize: "1rem",
+    borderRadius: "4px",
+    border: "1.5px solid #1976d2",
+    background: "#fff",
+    color: "#1976d2",
+    padding: "0.4em 1.1em",
+    margin: "0.3em 0.2em",
+    cursor: "pointer",
+    transition: "background 0.2s, color 0.2s"
 };
 
-const activeButton = { // Styling for active buttons
-    ...inactiveButton,
-    backgroundColor: "#9e0142",
-    color: "white",
-    fontWeight: "bold"
-}
+const activeButton = {
+    ...baseButton,
+    background: "#1976d2",
+    color: "#fff"
+};
+
+const inactiveButton = {
+    ...baseButton
+};
 
 const TransitionButtons = ({ type, buttons, monthly, title}) => {
     // Convert all button objects to use 'filepath' for consistency
@@ -59,6 +66,10 @@ const TransitionButtons = ({ type, buttons, monthly, title}) => {
                             setSubtitle(subtitle);
                             setActive(label);
                         }}
+                        onMouseOver={e => e.currentTarget.style.background = '#1976d2'}
+                        onMouseOut={e => active !== label && (e.currentTarget.style.background = '#fff')}
+                        onFocus={e => e.currentTarget.style.background = '#1976d2'}
+                        onBlur={e => active !== label && (e.currentTarget.style.background = '#fff')}
                     >{label}</button>
                 ))}
             </div>
