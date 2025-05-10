@@ -1,4 +1,4 @@
-# Implementation Guide
+# Implementation Guide: Creator Portfolio
 
 ## Project Setup
 
@@ -283,6 +283,203 @@ const buttonVariants = cva(
 )
 ```
 
+## About Page Implementation
+
+Based on the design shown in about.png, the About page implementation should include:
+
+### Header with Logo and Navigation
+```tsx
+// src/components/main-nav.tsx
+import Link from "next/link";
+
+export function MainNav() {
+  const routes = [
+    {
+      href: "/about",
+      label: "about",
+    },
+    {
+      href: "/projects",
+      label: "projects",
+    },
+  ];
+
+  return (
+    <nav className="flex items-center justify-between w-full py-8 px-6">
+      {/* Logo on the left with pixel font */}
+      <Link href="/" className="font-pixel text-lg">
+        Viktoria Gaiser
+      </Link>
+
+      {/* Navigation links on the right */}
+      <div className="flex items-center gap-8">
+        {routes.map((route) => (
+          <Link 
+            key={route.href} 
+            href={route.href}
+            className="text-sm transition-opacity hover:opacity-70"
+          >
+            {route.label}
+          </Link>
+        ))}
+      </div>
+    </nav>
+  );
+}
+```
+
+### Page Layout with Content and Cards
+```tsx
+// src/app/about/page.tsx
+import { MainNav } from "@/components/main-nav";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export default function AboutPage() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <header className="container mx-auto">
+        <MainNav />
+      </header>
+
+      <main className="container mx-auto px-6 py-12 flex-grow">
+        {/* Content section */}
+        <section className="max-w-3xl mb-16">
+          <h1 className="font-pixel text-3xl mb-8">About Me</h1>
+          <div className="prose">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus, nunc libero accumsan lacus, vitae tincidunt nisl mauris a elit.</p>
+            <p>Nulla facilisi. Proin luctus, velit id commodo varius, urna velit tincidunt nunc, id faucibus mauris risus vel nisl.</p>
+          </div>
+        </section>
+
+        {/* Card grid - Three colorful cards */}
+        <section className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Yellow Card */}
+            <Card className="bg-pastel_yellow border-none shadow-md">
+              <CardHeader>
+                <CardTitle className="font-pixel">CARD NAME</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
+              </CardContent>
+            </Card>
+
+            {/* Pink Card */}
+            <Card className="bg-pastel_pink-200 border-none shadow-md">
+              <CardHeader>
+                <CardTitle className="font-pixel">CARD NAME</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
+              </CardContent>
+            </Card>
+
+            {/* Blue Card */}
+            <Card className="bg-pastel_blue-200 border-none shadow-md">
+              <CardHeader>
+                <CardTitle className="font-pixel">CARD NAME</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Pixel art trophy icon section */}
+        <section className="flex justify-end mb-16">
+          <div className="w-16 h-16">
+            {/* Will be replaced with the actual pixel art image from /public/peta/ directory */}
+            <div className="bg-gray-300 w-full h-full flex items-center justify-center">
+              Trophy
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="container mx-auto px-6 py-8 text-sm text-gray-500">
+        Footer with copyright information
+      </footer>
+    </div>
+  );
+}
+```
+
+### Font Implementation
+To implement the Inter body font and Silkscreen pixel font:
+
+```tsx
+// src/app/layout.tsx
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import "./globals.css";
+
+// Load Inter for body text
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
+
+// Load Silkscreen for pixel art text
+// Note: You'll need to download the Silkscreen font files
+const silkscreen = localFont({
+  src: [
+    {
+      path: "../public/fonts/silkscreen/slkscr.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/silkscreen/slkscrb.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-pixel",
+});
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className={`${inter.variable} ${silkscreen.variable} font-sans`}>
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+### Card Component Styling
+Update the card component to support colorful backgrounds:
+
+```tsx
+// src/components/ui/card.tsx
+import * as React from "react";
+import { cn } from "@/lib/utils";
+
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      className
+    )}
+    {...props}
+  />
+));
+Card.displayName = "Card";
+
+// Continue with other card subcomponents...
+```
+
 ## Testing Protocol
 
 ### 1. Visual Regression Testing
@@ -535,3 +732,22 @@ When updating any part of this system:
 5. **Run accessibility checks** to maintain WCAG compliance
 
 This documentation should be treated as a living document that evolves with the codebase.
+
+## Brand-Aligned Implementation Principles
+- Every technical decision should support creativity, authenticity, and personal growth.
+- The structure is modular and scalable, allowing for new creative projects and experiments.
+- Accessibility and clarity are prioritized throughout.
+- Regular updates to the Playground and About pages demonstrate ongoing growth and learning.
+
+## Psychological Pillars in Practice
+- **Creative Flow:** Encourage experimentation and highlight the process behind each project.
+- **Emotional Resonance:** Use documentation and code to invite curiosity and connection.
+- **Inclusive Access:** Ensure all users can explore, learn, and interact with your work.
+
+## About & Playground Pages
+- **About:** Tell your story, philosophy, and approach to creative problem-solving in code.
+- **Playground:** Showcase interactive code experiments and invite visitors to explore and try things out.
+
+## Brand Voice in Implementation
+- Documentation and code should be reflective, insightful, and encouraging.
+- Focus on substance, clarity, and creative expression.

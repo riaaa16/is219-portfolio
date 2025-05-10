@@ -1,67 +1,75 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
-import { Menu } from "lucide-react"
+import { useState } from "react";
 
 export function MainNav() {
-  const [isOpen, setIsOpen] = useState(false)
-  
   const routes = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-  ]
+    { href: "/", label: "about" },
+    { href: "/projects", label: "projects" },
+    { href: "/contact", label: "contact" },
+  ];
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between w-full py-4">
-      <div className="flex items-center gap-6">
-        <Link href="/" className="text-xl font-bold">
-          Portfolio
+    <nav className="flex items-center justify-between w-full py-8">
+      <div className="flex items-center gap-3">
+        <img
+          src="/peta/animated logo.png"
+          alt="Animated logo"
+          width={32}
+          height={32}
+          className="w-8 h-8"
+          style={{ display: 'block' }}
+        />
+        <Link href="/" className="font-pixel text-2xl text-dark-blue">
+          Viktoria Gaiser
         </Link>
-        
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
+      </div>
+      {/* Desktop nav */}
+      <div className="hidden md:flex items-center gap-8">
+        {routes.map((route) => (
+          <Link
+            key={route.href}
+            href={route.href}
+            className="nav-link text-lg transition-opacity hover:opacity-70 group flex items-center relative"
+          >
+            <span className="w-6 h-6 mr-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center">
+              <img src="/peta/animated arrow.png" alt="arrow" width={24} height={24} />
+            </span>
+            {route.label}
+          </Link>
+        ))}
+      </div>
+      {/* Mobile hamburger */}
+      <div className="md:hidden flex items-center">
+        <button
+          aria-label="Open menu"
+          className="p-2 focus:outline-none"
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+            <rect y="5" width="24" height="2" rx="1" fill="currentColor" />
+            <rect y="11" width="24" height="2" rx="1" fill="currentColor" />
+            <rect y="17" width="24" height="2" rx="1" fill="currentColor" />
+          </svg>
+        </button>
+        <div
+          className={`absolute top-20 right-4 bg-white rounded-lg shadow-lg py-4 px-6 flex flex-col gap-4 z-50 border transition-all duration-300 transform
+            ${menuOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}
+        >
           {routes.map((route) => (
-            <Link 
-              key={route.href} 
+            <Link
+              key={route.href}
               href={route.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="nav-link text-lg"
+              onClick={() => setMenuOpen(false)}
             >
               {route.label}
             </Link>
           ))}
         </div>
       </div>
-      
-      {/* Mobile Navigation */}
-      <div className="md:hidden">
-        <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
-          <DropdownMenuTrigger asChild>
-            <button aria-label="Open menu" className="p-2">
-              <Menu className="h-5 w-5" />
-            </button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Navigation</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            {routes.map((route) => (
-              <DropdownMenuItem key={route.href} asChild>
-                <Link href={route.href}>{route.label}</Link>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
     </nav>
-  )
+  );
 }

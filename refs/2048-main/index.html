@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <h1>2048</h1>
+            <div class="score">
+                <p>SCORE</p>
+                <p id="score"></p>
+            </div>
+            <div class="score">
+                <p>BEST</p>
+                <p id="best"></p>
+            </div>
+            <button id="restart">RESTART</button>
+        </div>
+        <div id="2048">
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<script src="gamelogic.js"></script>
+</html>

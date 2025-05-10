@@ -1,80 +1,74 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+"use client";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
+import Footer from "@/components/Footer";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  function handleProjectCard(option: string) {
+    router.push(`/projects?option=${option}`);
+  }
+
   return (
-    <div className="min-h-screen bg-background">
-      <main className="container mx-auto space-y-16 pt-20 px-4">
-        {/* Hero Section - Using brand colors for psychological impact */}
-        <div className="text-center space-y-6 max-w-[800px] mx-auto">
-          <h1 className="font-mono tracking-tighter text-gradient-brand">
-            Challenge The AI Status Quo
-          </h1>
-          <p className="text-lg text-medium-contrast max-w-2xl mx-auto">
-            We liberate Fortune 100 companies through radical honesty and evidence-based AI disruption. No corporate speak. No incremental changes. Pure revolutionary transformation.
-          </p>
-          <div className="flex gap-4 justify-center pt-4">
-            <Button size="lg" className="text-base bg-gradient-brand hover:opacity-90">
-              Start Your Revolution
-            </Button>
-            <Button variant="outline" size="lg" className="text-base border-primary-600 text-primary-700 hover:bg-primary-50">
-              View Case Studies
-            </Button>
+    <div className="min-h-screen flex flex-col">
+      <main className="container mx-auto px-6 py-12 flex-grow">
+        {/* About section with larger gap and smaller lightbulb */}
+        <section className="mb-16 flex flex-col md:flex-row md:gap-16">
+          <div className="flex-1 min-w-0 flex flex-col justify-center">
+            <h1 className="font-pixel silkscreen-regular text-3xl mb-8">About Me</h1>
+            <div className="prose">
+              <p>Hi! I'm an aspiring web developer studying Web & Information Systems at NJIT.
+                On this portfolio website, you'll find a few projects created using primarily JavaScript and React.
+                Click on one of the cards below to view a project!</p>
+              <br></br>
+              <p>If you want to see more projects, please check out my <a target="_blank" href="https://github.com/riaaa16" style={{ color: '#1976d2', textDecoration: 'underline' }}>GitHub</a>.</p>
+            </div>
           </div>
-        </div>
+          <div className="flex-shrink-0 flex justify-center items-center mt-8 md:mt-0 md:w-[20%] w-full">
+            <img
+              src="/peta/animated lightbulb.png"
+              alt="Animated pixel lightbulb"
+              className="w-full max-w-[64px] h-auto"
+              style={{ display: 'block' }}
+            />
+          </div>
+        </section>
 
-        {/* Core Principles Section - Using color psychology for impact */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
-          <Card className="border-l-4 border-l-primary-500">
-            <CardHeader>
-              <CardTitle className="font-mono tracking-tight text-primary-700">Radical Honesty</CardTitle>
-              <CardDescription>Unfiltered insights that drive real change</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-medium-contrast">
-                We deliver uncomfortable truths that conventional consultants won't touch. Because real transformation starts with radical honesty.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-secondary-500">
-            <CardHeader>
-              <CardTitle className="font-mono tracking-tight text-secondary-700">Disruptive Innovation</CardTitle>
-              <CardDescription>Beyond optimization to revolution</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-medium-contrast">
-                We don't just improve your AI systems—we completely reimagine them. Creating market shifts, not incremental gains.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-accent-500">
-            <CardHeader>
-              <CardTitle className="font-mono tracking-tight text-accent-700">Evidence-Based Rebellion</CardTitle>
-              <CardDescription>Data-driven disruption that works</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-medium-contrast">
-                Our revolutionary approaches are backed by solid data and psychological research. We're rebels with results.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Call to Revolution Section - Using gradient for visual impact */}
-        <div className="text-center space-y-8 py-16">
-          <h2 className="font-mono tracking-tighter text-gradient-brand max-w-3xl mx-auto">
-            Ready to Break Free from AI Conformity?
-          </h2>
-          <p className="text-lg text-medium-contrast max-w-2xl mx-auto">
-            Join the ranks of Fortune 100 companies who've dared to challenge the established order and revolutionize their industries.
-          </p>
-          <Button size="lg" className="text-base bg-gradient-innovation hover:opacity-90">
-            Schedule Your Strategy Session
-          </Button>
-        </div>
+        {/* Card grid - Three colorful cards */}
+        <section>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Yellow Card */}
+            <div className="pixel-card pixel-card-yellow card-hover" onClick={() => handleProjectCard('data-visualization')} style={{ cursor: 'pointer' }}>
+              <div className="pixel-card-header pixel-card-header-yellow">
+                <span className="font-pixel text-2xl">Data Visualization</span>
+              </div>
+              <div className="pixel-card-content">
+                <p>Look at D3 charts and mindmaps to explore the relation between food costs and minimum wage.</p>
+              </div>
+            </div>
+            {/* Pink Card */}
+            <div className="pixel-card pixel-card-pink card-hover" onClick={() => handleProjectCard('ai-chat')} style={{ cursor: 'pointer' }}>
+              <div className="pixel-card-header pixel-card-header-pink">
+                <span className="font-pixel text-2xl">AI Chat</span>
+              </div>
+              <div className="pixel-card-content">
+                <p>Create a username and speak to Xenova's flan-t5-small text-to-text generation model!</p>
+              </div>
+            </div>
+            {/* Blue Card */}
+            <div className="pixel-card pixel-card-blue card-hover" onClick={() => handleProjectCard('2048')} style={{ cursor: 'pointer' }}>
+              <div className="pixel-card-header pixel-card-header-blue">
+                <span className="font-pixel text-2xl">2048</span>
+              </div>
+              <div className="pixel-card-content">
+                <p>Play a recreation of the popular game 2048!</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+      <Footer />
     </div>
   );
 }

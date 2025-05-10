@@ -1,8 +1,7 @@
-# Component Psychology System
+# Component Psychology System: Creator Portfolio
 
-## Psychological Foundation
-
-Our component system is built on principles of cognitive psychology, interaction design research, and behavioral science. Each component is designed to optimize both conscious and unconscious user interactions.
+## Psychological & Brand Foundation
+Our component system is designed for creative expression, technical clarity, and inclusive access. Components support both conscious and unconscious user interactions, reflecting the Creator archetype and the brand's values of creativity, authenticity, and excellence.
 
 ## shadcn/ui Integration
 
@@ -16,19 +15,51 @@ This project uses [shadcn/ui](https://ui.shadcn.com/) as its component library f
 - **Customizable**: Each component can be modified to match your exact design requirements
 - **Versioned Components**: Add and update components individually as needed
 
-### Adding New shadcn/ui Components
+### Color Card Component (Featured)
 
-You can add new shadcn/ui components using the CLI:
+The website features a prominent colorful card layout with three distinct cards, each in a different color (pastel yellow, pastel pink, and pastel blue). These cards create visual interest and highlight key content areas.
 
-```bash
-npx shadcn@latest add [component-name]
+```tsx
+// Example implementation of colorful card component
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {/* Yellow Card */}
+  <Card className="bg-pastel_yellow border-none shadow-md">
+    <CardHeader>
+      <CardTitle className="font-pixel">CARD NAME</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </CardContent>
+  </Card>
+
+  {/* Pink Card */}
+  <Card className="bg-pastel_pink-200 border-none shadow-md">
+    <CardHeader>
+      <CardTitle className="font-pixel">CARD NAME</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </CardContent>
+  </Card>
+
+  {/* Blue Card */}
+  <Card className="bg-pastel_blue-200 border-none shadow-md">
+    <CardHeader>
+      <CardTitle className="font-pixel">CARD NAME</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </CardContent>
+  </Card>
+</div>
 ```
 
-For example, to add the dropdown menu component:
-
-```bash
-npx shadcn@latest add dropdown-menu
-```
+**Psychological Properties:**
+- Soft pastel colors create a friendly, approachable aesthetic
+- Color palette evokes creativity, optimism, and digital craftsmanship
+- Card layout groups related content for easier cognitive processing
+- Consistent structure provides a predictable pattern that reduces cognitive load
+- Pixel font headings maintain brand identity while creating hierarchy
 
 ### Base Components (shadcn/ui)
 
@@ -314,3 +345,14 @@ The project includes a responsive navigation component (`MainNav`) that uses the
 2. "Cognitive Load in UI Components" - Interface Psychology Review
 3. "Interaction Patterns and Mental Models" - Digital Psychology Quarterly
 4. "Motion Psychology in User Interfaces" - UX Research Journal
+
+### Implementation Principles
+- Components should invite exploration, learning, and connection.
+- Use interaction states and feedback to support creative flow and emotional resonance.
+- Maintain modularity and scalability for ongoing growth and new creative work.
+
+### Accessibility
+- All components are tested for accessibility and inclusive design.
+
+### Brand Voice in Components
+- Components communicate with clarity, encouragement, and technical precision.

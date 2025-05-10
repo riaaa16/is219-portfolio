@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { IBM_Plex_Mono, Inter } from "next/font/google";
+import "@fontsource/silkscreen"; // Import Silkscreen font CSS
+import { MainNav } from "@/components/main-nav"; // Re-add the MainNav import
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,14 +17,17 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+// Font variables to use in className
+const fontVariables = `${inter.variable} ${ibmPlexMono.variable}`;
+
 export const metadata: Metadata = {
   title: {
-    default: "Outlaw AI Consultancy",
-    template: "%s | Outlaw AI Consultancy",
+    default: "Viktoria Gaiser",
+    template: "%s | Viktoria Gaiser",
   },
-  description: "Challenging the AI status quo with radical honesty and evidence-based disruption",
-  authors: [{ name: "Outlaw AI Consultancy" }],
-  keywords: ["AI consultancy", "digital transformation", "disruptive innovation"],
+  description: "Personal portfolio of Viktoria Gaiser showcasing creative projects.",
+  authors: [{ name: "Viktoria Gaiser" }],
+  keywords: ["web development", "coding", "portfolio", "creative coding", "projects"],
 };
 
 export const viewport: Viewport = {
@@ -41,7 +46,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
+      {/* No custom favicon link, let Next.js use public/favicon.png automatically */}
+      <body className={`${fontVariables} font-sans antialiased`}>
+        <header className="container mx-auto px-4">
+          <MainNav />
+        </header>
         {children}
       </body>
     </html>

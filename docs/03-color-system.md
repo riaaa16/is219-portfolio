@@ -1,4 +1,14 @@
-# Color Psychology System
+# Color Psychology System: Creator Portfolio
+
+## Brand & Psychological Foundation
+Our color system is built to support creativity, emotional resonance, and inclusive access. Each color is chosen for its psychological effect and its ability to express originality, clarity, and approachability—core to the Creator archetype.
+
+### Primary Palette
+- **Pastel Blue:** Creativity & Tech Inspiration
+- **Pastel Yellow:** Optimism & Clarity
+- **Pastel Pink:** Energy & Approachability
+- **Charcoal:** Stability & Depth
+- **White:** Simplicity & Space
 
 ## Scientific Foundation
 
@@ -6,115 +16,95 @@ Our color system is built on extensive cross-cultural research in color psycholo
 
 ### Primary Color Palette
 
-#### Core Blue (Trust & Competence)
+#### Pastel Blue (Creativity & Tech Inspiration)
 ```typescript
 // Tailwind config
 colors: {
-  primary: {
-    50: '#f0f9ff',
-    100: '#e0f2fe',
-    200: '#bae6fd',
-    300: '#7dd3fc',
-    400: '#38bdf8',
-    500: '#0ea5e9',  // Primary brand color
-    600: '#0284c7',
-    700: '#0369a1',
-    800: '#075985',
-    900: '#0c4a6e',
-    950: '#082f49',
+  pastel_blue: {
+    DARKER: '#08325c', // Custom darker shade
+    DEFAULT: '#A8D8FF',
+    100: '#0a2d47',
+    200: '#145a8e',
+    300: '#1e88d5',
+    400: '#5eb0eb',
+    500: '#A8D8FF',
+    600: '#b6e0ff',
+    700: '#c4e8ff',
+    800: '#d1f0ff',
+    900: '#e8f7ff',
   }
 }
 ```
 
-**Psychological Properties:**
-- Promotes trust and reliability
-- Enhances cognitive processing
-- Creates sense of depth and stability
-- Cross-cultural positive associations
-
-### Secondary Colors
-
-#### Supportive Green (Growth & Stability)
+#### Pastel Yellow (Optimism & Clarity)
 ```typescript
-secondary: {
-  50: '#f0fdf4',
-  100: '#dcfce7',
-  200: '#bbf7d0',
-  300: '#86efac',
-  400: '#4ade80',
-  500: '#22c55e',
-  600: '#16a34a',
-  700: '#15803d',
-  800: '#166534',
-  900: '#14532d',
-  950: '#052e16',
+pastel_yellow: {
+  DEFAULT: '#FFE9A8',
+  100: '#473a0a',
+  200: '#8e7414',
+  300: '#d5ae1e',
+  400: '#ebc95e',
+  500: '#FFE9A8',
+  600: '#ffeeb6',
+  700: '#fff2c4',
+  800: '#fff7d1',
+  900: '#fffbe8',
 }
 ```
 
-#### Accent Purple (Innovation & Quality)
+#### Pastel Pink (Energy & Approachability)
 ```typescript
-accent: {
-  50: '#faf5ff',
-  100: '#f3e8ff',
-  200: '#e9d5ff',
-  300: '#d8b4fe',
-  400: '#c084fc',
-  500: '#a855f7',
-  600: '#9333ea',
-  700: '#7e22ce',
-  800: '#6b21a8',
-  900: '#581c87',
-  950: '#3b0764',
+pastel_pink: {
+  DEFAULT: '#FFC2E2',
+  100: '#470a2d',
+  200: '#8e145a',
+  300: '#d51e88',
+  400: '#eb5eb0',
+  500: '#FFC2E2',
+  600: '#ffcee8',
+  700: '#ffdaee',
+  800: '#ffe6f4',
+  900: '#fff2fa',
 }
 ```
 
-### Neutral System
-Carefully calibrated for optimal cognitive processing and reduced eye strain:
-
+#### Charcoal (Stability & Depth)
 ```typescript
-neutral: {
-  50: '#f9fafb',
-  100: '#f3f4f6',
-  200: '#e5e7eb',
-  300: '#d1d5db',
-  400: '#9ca3af',
-  500: '#6b7280',
-  600: '#4b5563',
-  700: '#374151',
-  800: '#1f2937',
-  900: '#111827',
-  950: '#030712',
+charcoal: {
+  DEFAULT: '#434957',
+  100: '#0d0f11',
+  200: '#1b1d23',
+  300: '#282c34',
+  400: '#353a45',
+  500: '#434957',
+  600: '#626a7f',
+  700: '#868ea2',
+  800: '#aeb4c1',
+  900: '#d7d9e0',
 }
 ```
 
-### Semantic Colors
-
-#### Success States
+#### White (Simplicity & Space)
 ```typescript
-success: {
-  light: '#dcfce7',  // Subtle feedback
-  default: '#22c55e', // Primary feedback
-  dark: '#15803d',   // Strong feedback
+white: {
+  DEFAULT: '#FFFFFF',
+  100: '#FFFFFF',
+  200: '#FFFFFF',
+  300: '#FFFFFF',
+  400: '#FFFFFF',
+  500: '#FFFFFF',
+  600: '#F5F5F5',
+  700: '#E5E5E5',
+  800: '#D4D4D4',
+  900: '#A3A3A3',
 }
 ```
 
-#### Error States
-```typescript
-error: {
-  light: '#fee2e2',
-  default: '#ef4444',
-  dark: '#b91c1c',
-}
-```
-
-#### Warning States
-```typescript
-warning: {
-  light: '#fef3c7',
-  default: '#f59e0b',
-  dark: '#b45309',
-}
-```
+### Palette Overview
+- CSV: A8D8FF,FFE9A8,FFC2E2,434957,FFFFFF
+- With #: #A8D8FF, #FFE9A8, #FFC2E2, #434957, #FFFFFF
+- Array: ["A8D8FF","FFE9A8","FFC2E2","434957","FFFFFF"]
+- Object: {"Pastel Blue":"A8D8FF","Pastel Yellow":"FFE9A8","Pastel Pink":"FFC2E2","Charcoal":"434957","White":"FFFFFF"}
 
 ### Implementation Guidelines
 
@@ -139,11 +129,10 @@ module.exports = {
 /* globals.css */
 @layer utilities {
   .bg-gradient-brand {
-    @apply bg-gradient-to-r from-primary-600 to-primary-500;
+    @apply bg-gradient-to-r from-pastel_blue-600 to-pastel_blue-500;
   }
-  
   .text-gradient-brand {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pastel_blue-600 to-pastel_blue-500;
   }
 }
 ```
@@ -152,9 +141,9 @@ module.exports = {
 
 #### Content Hierarchy
 1. **Primary Actions**
-   - Use primary-500 for main CTA buttons
+   - Use pastel_blue-500 for main CTA buttons
    - Ensure 4.5:1 contrast ratio minimum
-   - Apply hover states using primary-600
+   - Apply hover states using pastel_blue-600
 
 2. **Information Hierarchy**
    - Use neutral colors for body text
@@ -171,9 +160,11 @@ module.exports = {
 #### Color Meaning Matrix
 | Color    | Western | Eastern | Islamic | Action                     |
 |----------|---------|---------|---------|----------------------------|
-| Primary  | Trust   | Harmony | Peace   | Use for key brand elements |
-| Secondary| Growth  | Life    | Nature  | Use for supporting elements|
-| Accent   | Quality | Royalty | Wisdom  | Use for highlights        |
+| Pastel Blue | Creativity | Tech Inspiration | Harmony | Use for key brand elements |
+| Pastel Yellow | Optimism | Clarity | Purity | Use for highlights        |
+| Pastel Pink | Energy | Approachability | Warmth | Use for highlights        |
+| Charcoal | Stability | Depth | Strength | Use for supporting elements|
+| White | Simplicity | Space | Purity | Use for highlights        |
 
 ### Accessibility Standards
 
@@ -204,3 +195,16 @@ module.exports = {
 1. "Color Psychology in Digital Interfaces" - HCI Journal 2024
 2. "Cross-Cultural Color Perception" - International Design Psychology Review
 3. "Color and Cognitive Processing" - Digital Psychology Quarterly
+
+### Application Principles
+- Use color to highlight creative work, guide exploration, and support emotional connection.
+- Maintain high contrast and accessibility for all users.
+- Use color sparingly for emphasis, supporting clarity and creative focus.
+
+### Accessibility & Inclusion
+- All color choices tested for contrast and color blindness.
+- Color is never the only means of conveying information.
+
+### Brand Voice in Color
+- Expressive, inviting, and original.
+- Color choices support a welcoming, creative, and authentic experience.
