@@ -18,8 +18,11 @@ export default function Home() {
           <div className="flex-1 min-w-0 flex flex-col justify-center">
             <h1 className="font-pixel silkscreen-regular text-3xl mb-8">About Me</h1>
             <div className="prose">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vel tincidunt luctus, nunc libero accumsan lacus, vitae tincidunt nisl mauris a elit.</p>
-              <p>Nulla facilisi. Proin luctus, velit id commodo varius, urna velit tincidunt nunc, id faucibus mauris risus vel nisl.</p>
+              <p>Hi! I'm an aspiring web developer studying Web & Information Systems at NJIT.
+                On this portfolio website, you'll find a few projects created using primarily JavaScript and React.
+                Click on one of the cards below to view a project!</p>
+              <br></br>
+              <p>If you want to see more projects, please check out my <a target="_blank" href="https://github.com/riaaa16" style={{ color: '#1976d2', textDecoration: 'underline' }}>GitHub</a>.</p>
             </div>
           </div>
           <div className="flex-shrink-0 flex justify-center items-center mt-8 md:mt-0 md:w-[20%] w-full">
