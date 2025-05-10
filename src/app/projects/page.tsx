@@ -1,14 +1,23 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Footer from "@/components/Footer";
 import DataVisualization from "@/components/eggs-main/DataVisualization";
 import AiChat from "@/components/ai-chat/AiChat";
 import Game2048 from "@/components/2048/Game2048";
 import GithubButton from "@/components/ui/GithubButton";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
-export default function ProjectsPage() {
+export default function ProjectsPageWrapper() {
+  return (
+    <Suspense>
+      <ProjectsPage />
+    </Suspense>
+  );
+}
+
+function ProjectsPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const option = searchParams.get("option");
   const [selected, setSelected] = useState(option || "");
 
@@ -18,7 +27,6 @@ export default function ProjectsPage() {
   }, [option]);
 
   // Optionally update the URL when dropdown changes
-  const router = require("next/navigation").useRouter();
   const handleSelect = (val: string) => {
     setSelected(val);
     if (val) router.replace(`/projects?option=${val}`);
