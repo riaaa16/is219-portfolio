@@ -29,7 +29,7 @@ export default function DataVisualization() {
 
   return (
     <div className={`App min-h-screen flex flex-col text-center ${styles.App}`}>
-      <main className="container mx-auto px-6 py-12 flex-grow">
+      <main className="container mx-auto px-6 flex-grow">
         <h1 className="text-3xl mb-8 text-center font-bold">Why is food so expensive nowadays?</h1>
         <div className={styles["section-box"] + " section-box mb-8"}>
           <MultiLineChart

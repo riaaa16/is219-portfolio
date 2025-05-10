@@ -1,13 +1,58 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import DataVisualization from "@/components/eggs-main/DataVisualization";
+import GithubButton from "@/components/ui/GithubButton";
 
 export default function ProjectsPage() {
+  const [selected, setSelected] = useState("");
+
+  const projectComponents: Record<string, React.ReactNode> = {
+    "data-visualization": <DataVisualization />,
+    // Add more projects here as needed
+  };
+
+  const projectComponent = projectComponents[selected] || null;
+
   return (
     <>
-      <DataVisualization />
-      <Footer />
+      <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <div style={{
+          maxWidth: 700,
+          margin: "1rem auto 1rem auto",
+          padding: "1rem",
+          textAlign: "center"
+        }}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 16, marginBottom: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              <select
+                className="font-pixel"
+                id="project-select"
+                value={selected}
+                onChange={e => setSelected(e.target.value)}
+                style={{ fontSize: "1rem", padding: "0.5em 1em", borderRadius: 4, border: "2px solid #1976d2" }}
+              >
+                <option value="">select a project</option>
+                <option value="data-visualization">data visualization</option>
+              </select>
+              {selected === "data-visualization" && (
+                <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
+                  <GithubButton link="https://github.com/riaaa16/eggs/tree/main" style={{ borderWidth: 2 }} />
+                </div>
+              )}
+            </div>
+          </div>
+          {selected === "" && (
+            <div style={{ color: "#607d8b", fontSize: "1.05rem", marginTop: 8, marginBottom: 24 }}>
+              Select a project from the dropdown to view its details.
+            </div>
+          )}
+        </div>
+        <div style={{ flex: 1 }}>
+          {projectComponent}
+        </div>
+        <Footer />
+      </div>
     </>
   );
 }
